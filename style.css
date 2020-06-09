@@ -1,14 +1,52 @@
 /* Color ideas found with colormind.io */
 /* Font ideas found with fontjoy.com */
 
+    /* Color Schemes (http://colormind.io/bootstrap/) */
+    /* light shades:        #F2F1F6 */
+    /* light accent:        #F9B17C */
+    /* main brand color:    #6586A7 */
+    /* dark accent:         #598779 */
+    /* dark shades:         #4E7078 */
+
+body {
+    background-color: #4E7078;
+}
+
+.btn-outline-primary {
+    color: #F2F1F6;
+    border-color: #F2F1F6;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+    color: #F2F1F6;
+    background-color: #598779;
+    border-color: #F2F1F6;
+}
+
 html,body {
     width: 100%;
     height: 100%;
-    margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-body {
-    background-color: #ECEDD0;
+.navbar {
+    padding-block-start: 1%;
+    padding-block-end: 1%;
+
+    padding-inline-end: 3%;
+    background-color: #6586A7;
+}
+
+.navbar-brand {
+    padding-inline-start: 3%;
+    color: #0C5159;
+}
+
+.nav-link {
+    color: #F2F1F6;
+}
+
+.nav-resume-button {
+    color: #F2F1F6;
 }
