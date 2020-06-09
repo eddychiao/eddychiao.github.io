@@ -19,7 +19,7 @@ body {
 
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
     color: #F2F1F6;
-    background-color: #598779;
+    background-color: #F9B17C;
     border-color: #F2F1F6;
 }
 
@@ -45,8 +45,14 @@ html,body {
 
 .nav-link {
     color: #F2F1F6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-link:hover {
+    color: #F9B17C;
 }
 
 .nav-resume-button {
     color: #F2F1F6;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
