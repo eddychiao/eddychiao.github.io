@@ -8,19 +8,29 @@
     /* dark accent:         #598779 */
     /* dark shades:         #4E7078 */
 
+
+:root {
+    --light-shade: #F2F1F6;
+    --light-accent: #F9B17C;
+    --main-color: #6586A7;
+    --dark-accent: #598779;
+    --dark-shade: #4E7078;
+}
+
+
 body {
-    background-color: #4E7078;
+    background-color: var(--dark-shade);
 }
 
 .btn-outline-primary {
-    color: #F2F1F6;
-    border-color: #F2F1F6;
+    color: var(--light-shade);
+    border-color: var(--light-shade);
 }
 
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
-    color: #F2F1F6;
-    background-color: #F9B17C;
-    border-color: #F2F1F6;
+    color: var(--light-shade);
+    background-color: var(--light-accent);
+    border-color: var(--light-shade);
 }
 
 html,body {
@@ -35,24 +45,23 @@ html,body {
     padding-block-end: 1%;
 
     padding-inline-end: 3%;
-    background-color: #6586A7;
+    background-color: var(--main-color);
 }
 
 .navbar-brand {
     padding-inline-start: 3%;
-    color: #0C5159;
 }
 
 .nav-link {
-    color: #F2F1F6;
+    color: var(--light-shade);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .nav-link:hover {
-    color: #F9B17C;
+    color: var(--light-accent);
 }
 
 .nav-resume-button {
-    color: #F2F1F6;
+    color: var(--light-shade);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
