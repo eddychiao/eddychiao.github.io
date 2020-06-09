@@ -30,6 +30,15 @@ body {
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
     color: var(--light-shade);
     background-color: var(--light-accent);
+    box-shadow: none;
+    border-color: var(--light-shade);
+    -webkit-transition: 0.2s;
+}
+
+.btn-outline-primary:active:focus {
+    color: var(--light-shade);
+    background-color: var(--light-accent);
+    box-shadow: none;
     border-color: var(--light-shade);
 }
 
@@ -40,9 +49,23 @@ html,body {
     overflow-x: hidden;
 }
 
+.landing-header, .landing-subtext {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--light-shade);
+}
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url("./images/fountain1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
 .navbar {
-    padding-block-start: 1%;
-    padding-block-end: 1%;
+    padding-block-start: 10px;
+    padding-block-end: 10px;
 
     padding-inline-end: 3%;
     background-color: var(--main-color);
