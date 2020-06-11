@@ -42,6 +42,18 @@ body {
     border-color: var(--light-shade);
 }
 
+.container {
+    font-family: "Questrial", sans-serif;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: var(--main-color);
+}
+
 html,body {
     width: 100%;
     height: 100%;
@@ -50,34 +62,39 @@ html,body {
 }
 
 .landing-header, .landing-subtext {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Questrial", sans-serif;
+    text-shadow: 4px 4px 4px black;
     color: var(--light-shade);
 }
 
 .masthead {
-    height: 100vh;
-    min-height: 500px;
-    background-image: url("./images/fountain1.jpg");
+    height: 95vh;
+    min-height: 400px;
+    background-image: url("./images/personal/fountain1.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
   }
 
 .navbar {
-    padding-block-start: 10px;
-    padding-block-end: 10px;
-
     padding-inline-end: 3%;
     background-color: var(--main-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.5s ease-in-out;
+
+    /* send navbar to front */
+    z-index: 9999;
 }
 
-.navbar-brand {
-    padding-inline-start: 3%;
+.navbar-hide {
+    top: -56px;
 }
 
 .nav-link {
     color: var(--light-shade);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Questrial", sans-serif;
 }
 
 .nav-link:hover {
@@ -86,5 +103,13 @@ html,body {
 
 .nav-resume-button {
     color: var(--light-shade);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Questrial", sans-serif;
+}
+
+.text-muted {
+    color: var(--light-shade)!important;
+}
+
+#projects {
+    background-color: var(--dark-accent);
 }
