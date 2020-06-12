@@ -21,26 +21,6 @@ body {
     background-color: var(--dark-shade);
 }
 
-.btn-outline-primary {
-    color: var(--light-shade);
-    border-color: var(--light-shade);
-}
-
-.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
-    color: var(--light-shade);
-    background-color: var(--light-accent);
-    box-shadow: none;
-    border-color: var(--light-shade);
-    -webkit-transition: 0.2s;
-}
-
-.btn-outline-primary:active:focus {
-    color: var(--light-shade);
-    background-color: var(--light-accent);
-    box-shadow: none;
-    border-color: var(--light-shade);
-}
-
 .card {
     text-align: center;
     width: 70%;
@@ -119,11 +99,6 @@ html,body {
     color: var(--light-accent);
 }
 
-.nav-resume-button {
-    color: var(--light-shade);
-    font-family: "Questrial", sans-serif;
-}
-
 .overlay {
     position: absolute;
     top: 0;
@@ -152,6 +127,18 @@ html,body {
     transform: translate(-50%, -50%);
     text-align: center;
     text-shadow: 4px 4px 4px black;
+}
+
+.resume {
+    border: 1px solid var(--light-shade);
+    border-radius: 5px;
+    -webkit-transition: 0.2s;
+}
+  
+.resume:hover {
+    background-color: var(--light-accent);
+    color: var(--light-shade);
+    -webkit-transition: 0.3s;
 }
 
 .text-muted {
