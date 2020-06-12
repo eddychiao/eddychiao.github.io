@@ -10,13 +10,12 @@
 
 
 :root {
-    --light-shade: #F2F1F6;
-    --light-accent: #F9B17C;
-    --main-color: #6586A7;
-    --dark-accent: #598779;
-    --dark-shade: #4E7078;
+    --light-shade: #EFF1F2;
+    --light-accent: #9496BF;
+    --main-color: #686666;
+    --dark-accent: #7A7F86;
+    --dark-shade: #1B221C;
 }
-
 
 body {
     background-color: var(--dark-shade);
@@ -42,6 +41,16 @@ body {
     border-color: var(--light-shade);
 }
 
+.card {
+    text-align: center;
+    width: 70%;
+    height: 100%;
+}
+
+.card-deck {
+    width: 100%
+}
+
 .container {
     font-family: "Questrial", sans-serif;
 }
@@ -61,12 +70,6 @@ html,body {
     overflow-x: hidden;
 }
 
-.landing-header, .landing-subtext {
-    font-family: "Questrial", sans-serif;
-    text-shadow: 4px 4px 4px black;
-    color: var(--light-shade);
-}
-
 .masthead {
     height: 95vh;
     min-height: 400px;
@@ -78,7 +81,7 @@ html,body {
 
 .navbar {
     padding-inline-end: 3%;
-    background-color: var(--main-color);
+    background-color: var(--dark-shade);
     position: fixed;
     top: 0;
     width: 100%;
@@ -86,6 +89,17 @@ html,body {
 
     /* send navbar to front */
     z-index: 9999;
+}
+
+.navbar-brand {
+    color: var(--light-shade);
+    font-family: "Questrial", sans-serif;
+    font-size: 50;
+    padding-inline-start: 2%;
+}
+
+.navbar-brand:hover {
+    color: var(--light-accent);
 }
 
 .navbar-hide {
@@ -97,6 +111,10 @@ html,body {
     font-family: "Questrial", sans-serif;
 }
 
+.nav-link:active {
+    color: var(--light-accent);
+}
+
 .nav-link:hover {
     color: var(--light-accent);
 }
@@ -106,10 +124,49 @@ html,body {
     font-family: "Questrial", sans-serif;
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #008CBA;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 200%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-shadow: 4px 4px 4px black;
+}
+
 .text-muted {
     color: var(--light-shade)!important;
 }
 
+#active {
+    color: var(--light-accent);
+}
+
 #projects {
     background-color: var(--dark-accent);
+}
+
+#projects-section {
+    padding-left: 10%;
+    padding-right: 10%;
 }
