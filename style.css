@@ -60,6 +60,8 @@ html,body {
   }
 
 .navbar {
+    padding-block-start: 0.5%;
+    padding-block-end: 0.5%;
     padding-inline-end: 3%;
     background-color: var(--dark-shade);
     position: fixed;
@@ -80,6 +82,7 @@ html,body {
 
 .navbar-brand:hover {
     color: var(--light-accent);
+    -webkit-transition: 0.2s;
 }
 
 .navbar-hide {
@@ -89,6 +92,7 @@ html,body {
 .nav-link {
     color: var(--light-shade);
     font-family: "Questrial", sans-serif;
+    -webkit-transition: 0.3s;
 }
 
 .nav-link:active {
@@ -132,13 +136,12 @@ html,body {
 .resume {
     border: 1px solid var(--light-shade);
     border-radius: 5px;
-    -webkit-transition: 0.2s;
+    -webkit-transition: 0.4s;
 }
   
 .resume:hover {
     background-color: var(--light-accent);
     color: var(--light-shade);
-    -webkit-transition: 0.3s;
 }
 
 .text-muted {
@@ -153,7 +156,14 @@ html,body {
     background-color: var(--dark-accent);
 }
 
+#projects-header {
+    padding-block-start: 5%;
+    padding-inline-start: 5%;
+    color: var(--light-shade);
+    font-family: "Questrial", sans-serif;
+}
+
 #projects-section {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
