@@ -21,6 +21,11 @@ body {
     background-color: var(--dark-shade);
 }
 
+br {
+    display: block;
+    line-height: 1em;
+}
+
 .card {
     text-align: center;
     width: 70%;
@@ -35,12 +40,33 @@ body {
     font-family: "Questrial", sans-serif;
 }
 
+.fa {
+    padding: 15px;
+    font-size: 30px;
+    width: 47px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}  
+
+.fa:hover {
+    opacity: 0.8;
+    -webkit-transition: 0.2s;
+    color: none;
+}
+
+.fa-facebook, .fa-instagram, .fa-linkedin, .fa-google-plus, .fa-github {
+    background: var(--light-accent);
+    color: var(--light-shade);;
+}
+
 .footer {
     bottom: 0;
     width: 100%;
     height: 60px;
     line-height: 60px;
-    background-color: var(--main-color);
+    background-color: var(--dark-shade);
+    text-align: center;
 }
 
 html,body {
