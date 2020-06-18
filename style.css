@@ -27,9 +27,21 @@ br {
 }
 
 .card {
+    border: 3px solid var(--light-shade);
+    border-radius: 3px;
+    background-color: var(--dark-shade);
     text-align: center;
-    width: 70%;
+    color: var(--light-shade);
+    width: 60%;
     height: 100%;
+    -webkit-transition: 0.2s;
+}
+
+.card:hover {
+    text-decoration: none;
+    color: var(--light-accent);
+    -webkit-transition: 0.4s;
+    transform: scale(1.1);
 }
 
 .card-deck {
@@ -52,7 +64,7 @@ br {
 .fa:hover {
     opacity: 0.8;
     -webkit-transition: 0.2s;
-    color: none;
+    text-decoration: none;
 }
 
 .fa-facebook, .fa-instagram, .fa-linkedin, .fa-google-plus, .fa-github {
