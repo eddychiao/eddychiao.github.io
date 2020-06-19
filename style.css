@@ -31,6 +31,7 @@ br {
     border-radius: 3px;
     background-color: var(--dark-shade);
     text-align: center;
+    font-family: "Questrial", sans-serif;
     color: var(--light-shade);
     width: 60%;
     height: 100%;
@@ -46,6 +47,11 @@ br {
 
 .card-deck {
     width: 100%
+}
+
+.column {
+    float: left;
+    width: 50%;
 }
 
 .container {
@@ -95,6 +101,7 @@ html,body {
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
+    -webkit-transition: background-image 5s;
   }
 
 .navbar {
@@ -196,12 +203,12 @@ html,body {
 
 #projects-header {
     padding-block-start: 5%;
-    padding-inline-start: 5%;
     color: var(--light-shade);
     font-family: "Questrial", sans-serif;
+    text-align: center;
 }
 
 #projects-section {
-    padding-left: 15%;
+    padding-left: 16.4%;
     padding-right: 15%;
 }
