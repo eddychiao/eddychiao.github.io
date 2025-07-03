@@ -1,0 +1,44 @@
+.About {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .About-left {
+    flex: 3; /* Takes up 2/3 of the page */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 20px;
+  }
+  
+  .About-right {
+    flex: 2; /* Takes up 1/3 of the page */
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .About-body {
+    font-size: calc(60px + 3vmin);
+    font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
+    text-align: left;
+  }
+
+  .About-description {
+    flex: 3;
+    font-family: 'Urbanist', sans-serif;
+    font-size: calc(14px + 1vmin);
+    color: #315C4F;
+    text-align: left;
+  }
+  
+  .About-image {
+    max-width: 90%;
+    height: auto;
+  }

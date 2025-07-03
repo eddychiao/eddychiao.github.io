@@ -1,0 +1,34 @@
+.navbar {
+    width: 100%;
+    position: sticky;
+    background-color: #BC3E0E;
+    z-index: 1000;
+}
+
+.navbar-link-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.navbar-links {
+    width: 50%;
+}
+
+.navbar-home-icon {
+    color: #BC3E0E;
+    align-items: flex-start;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.navbar-item {
+    color: #BC3E0E;
+    padding: 10px 15px;
+		padding-right: 0px;
+    border-radius: 5px;
+}

@@ -1,0 +1,37 @@
+.theme-overlay {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px; /* Distance from the right of the screen */
+    z-index: 9999; /* Ensure it stays above other elements */
+    padding: 5px; /* Add padding inside the button group */
+    background-color: transparent; /* Ensure the background is transparent */
+}
+
+.toggle-option-vermilion-button {
+    background: linear-gradient(155deg, #E42015 45%, #315C4F 55% ); /* Diagonal split */
+    border: 3px solid black;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    background-clip: padding-box; /* Prevent gradient from bleeding into the border */
+}
+
+.toggle-option-porcelain-button {
+    background: linear-gradient(155deg, #266DD3 45%, #DE5246 55%); /* Diagonal split */
+    border: 3px solid black;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    background-clip: padding-box; /* Prevent gradient from bleeding into the border */
+}
+
+.toggle-option-katana-button {
+    background: linear-gradient(155deg, #000000 45%, #A799B7 55%); /* Diagonal split */
+    border: 3px solid black;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    background-clip: padding-box; /* Prevent gradient from bleeding into the border */
+}
+
+.toggle-option-vermilion-text,
+.toggle-option-porcelain-text,
+.toggle-option-katana-text {
+    font-size: 14px;
+    font-family: 'DejaVu Sans Mono', monospace;
+    color: white;
+}
