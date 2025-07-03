@@ -28,16 +28,14 @@
 
 .Home-body {
   font-size: calc(60px + 3vmin);
-  color: #E42015;
-  font-family: 'Abril Fatface', cursive; /* Apply Abril Fatface font */
+  font-family: 'Abril Fatface', cursive;
   text-align: left;
 }
 
 .Home-description {
   font-weight: bold;
   font-family: 'Urbanist', sans-serif;
-  font-size: calc(16px + 1vmin); /* Adjust font size */
-  color: #315C4F;
+  font-size: calc(16px + 1vmin);
   text-align: left;
 }
 
@@ -55,5 +53,5 @@
   display: flex;
   justify-content: left;
   align-items: left;
-  margin-top: 20px; /* Add some space above the button */
+  margin-top: 20px;
 }

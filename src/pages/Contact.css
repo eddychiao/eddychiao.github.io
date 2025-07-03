@@ -1,44 +1,42 @@
-.About {
+.Contact {
     text-align: center;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     height: 100vh;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 30%;
+    padding-right: 30%;
   }
 
-  .About-left {
-    flex: 3; /* Takes up 3/5 of the page */
+  .Contact-left {
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-right: 20px;
   }
   
-  .About-right {
-    flex: 2; /* Takes up 2/5 of the page */
+  .Contact-right {
+    flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
-
-  .About-body {
-    font-size: calc(60px + 3vmin);
+  
+  .Contact-header {
+    font-size: calc(50px + 3vmin);
     font-family: 'Abril Fatface', cursive;
     text-align: left;
   }
 
-  .About-description {
-    flex: 3;
+  .Contact-description {
+    font-weight: bold;
     font-family: 'Urbanist', sans-serif;
-    font-size: calc(10px + 1vmin);
-    color: #315C4F;
+    font-size: calc(18px + 1vmin);
     text-align: left;
   }
-  
-  .About-image {
-    max-width: 90%;
-    height: auto;
+
+  .Contact-fab {
+    font-family: 'Urbanist', sans-serif;
   }

@@ -82,6 +82,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       </Fab>
     </Tooltip>
   );
+  
   return (
     <div className="Home" style={{ backgroundColor: theme.backgroundColor }}>
       <div className="Home-left">

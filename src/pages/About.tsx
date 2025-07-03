@@ -25,13 +25,13 @@ const About: React.FC<AboutProps> = ({ theme }) => {
 
           <br /><br />
 
-          I graduated with a Bachelor's and Master's degree in Computer Science from Georgia Tech, and currently work as a software engineer. 
-          I worked a few internships during my undergraduate years at companies like Capital One and American Express, and I started working at Microsoft
-          soon after graduating.
+          I graduated with a BS and MS in Computer Science from Georgia Tech, and currently work as a software engineer. I worked a few internships at companies like Capital One and American Express, and I started working at Microsoft soon after graduating. I lived in Atlanta (Georgia) for most of my life, but as of Fall 2024 I am now living in New York City.
 
           <br /><br />
 
+          Most of my experience deals with web development, but I also have experience with developing in Python and working with a few data science techniques.
 
+          I have a wide range of interests, including photography, music, volleyball, and many others. You can find some of my work on this website
         </div>
       </div>
       <div className="About-right">

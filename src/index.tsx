@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './pages/Home';
 import About from './pages/About';
+import Contact from './pages/Contact';
+
 import Navbar from './components/Navbar';
 import Photography from './pages/Photography';
 import ThemeOverlay from './components/ThemeOverlay';
@@ -23,6 +25,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home theme={theme} />} /> {/* Pass theme to Home */}
         <Route path="/about" element={<About theme={theme}/>} />
         <Route path="/photography" element={<Photography />} />
+        <Route path="/contact" element={<Contact theme={theme}/>} />
       </Routes>
     </>
   );
