@@ -1,44 +1,63 @@
 .About {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    padding-left: 20%;
-    padding-right: 20%;
-  }
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Change to column layout to stack sections */
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding-left: 20%;
+  padding-right: 20%;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
 
-  .About-left {
-    flex: 3; /* Takes up 3/5 of the page */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-right: 20px;
-  }
-  
-  .About-right {
-    flex: 2; /* Takes up 2/5 of the page */
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
+.About-content {
+  display: flex;
+  flex-direction: row; /* Row layout for left and right sections */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Ensure it spans the full width */
+  flex: 1; /* Allow it to take up most of the space */
+}
 
-  .About-body {
-    font-size: calc(60px + 3vmin);
-    font-family: 'Abril Fatface', cursive;
-    text-align: left;
-  }
+.About-left {
+  flex: 3; /* Takes up 3/5 of the row */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 20px;
+}
 
-  .About-description {
-    flex: 3;
-    font-family: 'Urbanist', sans-serif;
-    font-size: calc(10px + 1vmin);
-    color: #315C4F;
-    text-align: left;
-  }
-  
-  .About-image {
-    max-width: 90%;
-    height: auto;
-  }
+.About-right {
+  flex: 2; /* Takes up 2/5 of the row */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.About-body {
+  font-size: calc(60px + 3vmin);
+  font-family: 'Abril Fatface', cursive;
+  text-align: left;
+}
+
+.About-description {
+  flex: 3;
+  font-family: 'Urbanist', sans-serif;
+  font-size: calc(10px + 1vmin);
+  text-align: left;
+}
+
+.About-image {
+  max-width: 90%;
+  height: auto;
+  border-radius: 50%; /* Makes the image circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for better aesthetics */
+  object-fit: cover; /* Ensures the image fits well within the circle */
+}
+
+.About-timeline {
+  width: 100%; /* Full width */
+  text-align: center; /* Center align content */
+  margin-top: 20px; /* Add spacing above the timeline */
+  flex: 0; /* Prevent it from growing */
+}
