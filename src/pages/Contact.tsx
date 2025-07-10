@@ -74,7 +74,7 @@ const Contact: React.FC<ContactProps> = ({ theme }) => {
               {createTooltip('Email', 'eddychiao@gmail.com', <MailOutlineRoundedIcon sx={{ mr: 1 }}/>)}
               {createTooltip('LinkedIn', 'LinkedIn', <LinkedInIcon sx={{ mr: 1 }}/>)}
               {createTooltip('GitHub', 'GitHub', <GitHubIcon sx={{ mr: 1 }}/>)}
-              {createTooltip('Instagram', 'Photography Insta', <InstagramIcon sx={{ mr: 1 }}/>)}
+              {createTooltip('Instagram', 'Photography', <InstagramIcon sx={{ mr: 1 }}/>)}
             </Stack>
           </Box>
 

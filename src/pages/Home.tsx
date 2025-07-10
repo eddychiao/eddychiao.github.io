@@ -93,7 +93,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           Welcome to my website!
         </div>
         <div className='Home-navbar'>
-          <Box sx={{ '& > :not(style)': { m: 0, marginRight: "50px" } }}>
+          <Box sx={{ '& > :not(style)': { m: 0, marginRight: "30px" } }}>
             {createTooltip('about', <WavingHandRoundedIcon />)}
             {createTooltip('photography', <PhotoCameraRoundedIcon />)}
             {createTooltip('coding', <CodeRoundedIcon />)}

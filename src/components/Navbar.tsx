@@ -9,7 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Home', 'About', 'Photography', 'Coding', 'Music', '???', 'Contact'];
+const pages = ['Home', 'About', 'Photography', 'Coding', 'Music', 'Minigames', 'Contact'];
 
 interface Theme {
   backgroundColor: string;
@@ -45,8 +45,8 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
       case 'Music':
         navigate('/music'); // Navigate to the music page
         break;
-      case '???':
-        navigate('/unknown'); // Navigate to the unknown page
+      case 'Minigames':
+        navigate('/minigames'); // Navigate to the unknown page
         break;
       default:
         navigate('/'); // Default to home if no match

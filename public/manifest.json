@@ -3,7 +3,7 @@
   "name": "Eddy's Portfolio",
   "icons": [
     {
-      "src": "square_e.ico",
+      "src": "circle_e.ico",
       "sizes": "64x64 48x48 32x32 16x16",
       "type": "image/x-icon"
     }

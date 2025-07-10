@@ -7,12 +7,32 @@ import ToggleButtonGroup, {
 import { styled } from '@mui/material/styles';
 import './ThemeOverlay.css';
 
+const themes = {
+  vermilion: {
+    backgroundColor: '#FFF1E6',
+    headerColor: '#E42015',
+    textColor: '#315C4F',
+    buttonColor: '#CDA952',
+  },
+  porcelain: {
+    backgroundColor: '#F0EDE8',
+    headerColor: '#266DD3',
+    textColor: '#DE5246',
+    buttonColor: '#468A96',
+  },
+  katana: {
+    backgroundColor: '#333333',
+    headerColor: '#A799B7',
+    textColor: '#F5F5DC',
+    buttonColor: '#F78764',
+  },
+};
 
 const ThemeOverlay: React.FC = () => {
-  const { setThemeName } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [view, setView] = React.useState<string>(() => {
-    // Retrieve the saved theme from localStorage or default to 'vermilion'
-    return localStorage.getItem('theme') || 'vermilion';
+    // Retrieve the saved theme name from localStorage or default to 'vermilion'
+    return localStorage.getItem('themeName') || 'vermilion';
   });
 
   const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
@@ -33,22 +53,22 @@ const ThemeOverlay: React.FC = () => {
         borderTop: `1px solid ${(theme.vars || theme).palette.action.disabledBackground}`,
       },
   }));
-  
 
   const handleChange = (event: React.MouseEvent<HTMLElement>, nextView: string) => {
     if (nextView !== null) {
       setView(nextView);
-      setThemeName(nextView as keyof typeof setThemeName);
+      setTheme(themes[nextView as keyof typeof themes]); // Update the theme in context
+      localStorage.setItem('themeName', nextView); // Persist the selected theme name
     }
   };
 
   return (
     <StyledToggleButtonGroup
-      className='theme-overlay'
+      className="theme-overlay"
       value={view}
       exclusive
       onChange={handleChange}
-      aria-label="text alignment"
+      aria-label="theme selection"
       orientation="vertical"
     >
       <ToggleButton className="toggle-option-vermilion-button" value="vermilion" aria-label="vermilion">

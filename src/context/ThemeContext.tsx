@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface Theme {
   backgroundColor: string;
@@ -7,53 +7,38 @@ interface Theme {
   buttonColor: string;
 }
 
-const themes = {
-  vermilion: {
-    backgroundColor: '#FFF1E6',
-    headerColor: '#E42015',
-    textColor: '#315C4F',
-    buttonColor: '#CDA952',
-  },
-  porcelain: {
-    backgroundColor: '#F0EDE8',
-    headerColor: '#266DD3',
-    textColor: '#DE5246',
-    buttonColor: '#468A96',
-  },
-  katana: {
-    backgroundColor: '#333333',
-    headerColor: '#A799B7',
-    textColor: '#F5F5DC',
-    buttonColor: '#F78764',
-  },
+const defaultTheme: Theme = {
+  backgroundColor: '#FFF1E6',
+  headerColor: '#E42015',
+  textColor: '#315C4F',
+  buttonColor: '#CDA952',
 };
 
-interface ThemeContextProps {
+const ThemeContext = createContext<{
   theme: Theme;
-  setThemeName: (name: keyof typeof themes) => void;
-}
+  setTheme: (theme: Theme) => void;
+}>({
+  theme: defaultTheme,
+  setTheme: () => {},
+});
 
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [theme, setTheme] = useState<Theme>(() => {
+    // Retrieve theme from localStorage or use defaultTheme
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? JSON.parse(savedTheme) : defaultTheme;
+  });
 
-interface ThemeProviderProps {
-  children: React.ReactNode;
-}
-
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [themeName, setThemeName] = useState<keyof typeof themes>('vermilion');
-  const theme = themes[themeName];
+  useEffect(() => {
+    // Save theme to localStorage whenever it changes
+    localStorage.setItem('theme', JSON.stringify(theme));
+  }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setThemeName }}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
 
-export const useTheme = (): ThemeContextProps => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+export const useTheme = () => useContext(ThemeContext);
