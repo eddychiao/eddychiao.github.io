@@ -12,6 +12,8 @@ import WavingHandRoundedIcon from '@mui/icons-material/WavingHandRounded';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Home.css';
 
+import * as constants from '../const/enum';
+
 interface Theme {
   backgroundColor: string;
   headerColor: string;
@@ -26,7 +28,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ theme }) => {
   
   const navigate = useNavigate(); // Initialize navigation
-  const isDarkTheme = theme.backgroundColor === '#333333'; // Example condition for dark theme
+  const isDarkTheme = theme.backgroundColor === constants.colors.katana.backgroundColor;
 
   // Navigation logic for Fab buttons
   const handleFabClick = (page: string) => {

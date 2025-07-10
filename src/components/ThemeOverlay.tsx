@@ -7,26 +7,9 @@ import ToggleButtonGroup, {
 import { styled } from '@mui/material/styles';
 import './ThemeOverlay.css';
 
-const themes = {
-  vermilion: {
-    backgroundColor: '#FFF1E6',
-    headerColor: '#E42015',
-    textColor: '#315C4F',
-    buttonColor: '#CDA952',
-  },
-  porcelain: {
-    backgroundColor: '#F0EDE8',
-    headerColor: '#266DD3',
-    textColor: '#DE5246',
-    buttonColor: '#468A96',
-  },
-  katana: {
-    backgroundColor: '#333333',
-    headerColor: '#A799B7',
-    textColor: '#F5F5DC',
-    buttonColor: '#F78764',
-  },
-};
+import * as constants from '../const/enum';
+
+const themes = constants.colors;
 
 const ThemeOverlay: React.FC = () => {
   const { theme, setTheme } = useTheme();
