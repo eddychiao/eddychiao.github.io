@@ -75,10 +75,16 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       }}
     >
       <Fab
-        style={{ backgroundColor: theme.buttonColor }}
+        style={{ backgroundColor: theme.buttonColor, }}
         color="secondary"
         aria-label={title}
         onClick={() => handleFabClick(title)} // Map Fab click to navigation logic
+        sx={{
+          width: '1vw', // Width proportional to viewport width
+          height: '1vw', // Height proportional to viewport width (makes it circular)
+          minWidth: '50px', // Minimum size for smaller screens
+          minHeight: '50px', // Minimum size for smaller screens
+        }}
       >
         {icon}
       </Fab>
@@ -95,7 +101,15 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           Welcome to my website!
         </div>
         <div className='Home-navbar'>
-          <Box sx={{ '& > :not(style)': { m: 0, marginRight: "30px" } }}>
+          <Box
+            sx={{
+              '& > :not(style)': {
+                m: 0,
+                marginRight: '2vw', // Replaced 30px with 2vw
+                marginTop: '1vh', // Replaced 10px with 1vh
+              },
+            }}
+          >
             {createTooltip('about', <WavingHandRoundedIcon />)}
             {createTooltip('photography', <PhotoCameraRoundedIcon />)}
             {createTooltip('coding', <CodeRoundedIcon />)}

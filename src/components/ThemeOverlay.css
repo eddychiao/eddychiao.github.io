@@ -1,9 +1,9 @@
 .theme-overlay {
     position: fixed;
-    bottom: 20px; /* Distance from the bottom of the screen */
-    right: 20px; /* Distance from the right of the screen */
+    bottom: 2%; /* Distance from the bottom of the screen */
+    right: 1%; /* Distance from the right of the screen */
     z-index: 9999; /* Ensure it stays above other elements */
-    padding: 5px; /* Add padding inside the button group */
+    padding: 1%; /* Add padding inside the button group */
     background-color: transparent; /* Ensure the background is transparent */
 }
 
@@ -31,7 +31,7 @@
 .toggle-option-vermilion-text,
 .toggle-option-porcelain-text,
 .toggle-option-katana-text {
-    font-size: 14px;
+    font-size: 0.7vw;
     font-family: 'DejaVu Sans Mono', monospace;
     color: white;
 }
