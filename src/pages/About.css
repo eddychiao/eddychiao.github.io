@@ -4,7 +4,7 @@
   flex-direction: column; /* Change to column layout to stack sections */
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
+  height: 100%;
   padding-left: 20%;
   padding-right: 20%;
   box-sizing: border-box; /* Ensure padding doesn't affect width */
@@ -35,6 +35,7 @@
 }
 
 .About-body {
+  padding-top: 15%;
   font-size: calc(60px + 3vmin);
   font-family: 'Abril Fatface', cursive;
   text-align: left;

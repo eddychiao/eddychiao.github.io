@@ -5,8 +5,8 @@ import Fab from '@mui/material/Fab';
 import Tooltip from '@mui/material/Tooltip';
 import PhotoCameraRoundedIcon from '@mui/icons-material/PhotoCameraRounded';
 import ContactPageRoundedIcon from '@mui/icons-material/ContactPageRounded';
-import MusicNoteRoundedIcon from '@mui/icons-material/MusicNoteRounded';
-import SportsEsportsRoundedIcon from '@mui/icons-material/SportsEsportsRounded';
+// import MusicNoteRoundedIcon from '@mui/icons-material/MusicNoteRounded';
+// import SportsEsportsRoundedIcon from '@mui/icons-material/SportsEsportsRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import WavingHandRoundedIcon from '@mui/icons-material/WavingHandRounded';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
@@ -113,8 +113,8 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             {createTooltip('about', <WavingHandRoundedIcon />)}
             {createTooltip('photography', <PhotoCameraRoundedIcon />)}
             {createTooltip('coding', <CodeRoundedIcon />)}
-            {createTooltip('music', <MusicNoteRoundedIcon />)}
-            {createTooltip('minigames', <SportsEsportsRoundedIcon />)}
+            {/* {createTooltip('music', <MusicNoteRoundedIcon />)} */}
+            {/* {createTooltip('minigames', <SportsEsportsRoundedIcon />)} */}
             {createTooltip('contact', <ContactPageRoundedIcon />)}
           </Box>
         </div>

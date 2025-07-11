@@ -1,7 +1,8 @@
 .navbar {
     width: 100%;
-    position: sticky;
-    background-color: #BC3E0E;
+    top: 0;
+    left: 0;
+    position: fixed;
     z-index: 1000;
 }
 
@@ -20,14 +21,12 @@
 }
 
 .navbar-home-icon {
-    color: #BC3E0E;
     align-items: flex-start;
     padding: 10px 15px;
     border-radius: 5px;
 }
 
 .navbar-item {
-    color: #BC3E0E;
     padding: 10px 15px;
 		padding-right: 0px;
     border-radius: 5px;
