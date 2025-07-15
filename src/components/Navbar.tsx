@@ -10,12 +10,13 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { useNavigate } from 'react-router-dom';
 
 const pages = ['Home', 
-  'About', 
+  'About',
+  'Coding',
   'Photography', 
-  'Coding', 
   // 'Music', 
   // 'Minigames', 
-  'Contact'
+  'Contact',
+  'Resume'
 ];
 
 interface Theme {
@@ -64,6 +65,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
         break;
       case 'Coding':
         navigate('/coding'); // Navigate to the coding page
+        break;
+      case 'Resume':
+        window.open('/files/resume_summer2025.pdf', '_blank'); // Open resume in a new tab
         break;
       // case 'Music':
       //   navigate('/music'); // Navigate to the music page

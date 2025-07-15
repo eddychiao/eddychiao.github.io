@@ -1,5 +1,5 @@
 import React from 'react';
-import './Photography.css';
+import './Coding.css';
 
 import * as constants from '../const/enum';
 
@@ -10,15 +10,16 @@ interface Theme {
   buttonColor: string;
 }
 
-interface PhotographyProps {
+interface CodingProps {
   theme: Theme;
 }
 
-const Photography: React.FC<PhotographyProps> = ({ theme }) => {  return (
-    <div className="Photography">
-      <header className="Photography-body">
+const Coding: React.FC<CodingProps> = ({ theme }) => {
+  return (
+    <div className="Coding">
+      <header className="Coding-body">
         <p>
-          PHOTOGRAPHY PAGE
+          Coding PAGE
         </p>
       </header>
       <div>
@@ -32,4 +33,4 @@ const Photography: React.FC<PhotographyProps> = ({ theme }) => {  return (
   );
 }
 
-export default Photography;
+export default Coding;

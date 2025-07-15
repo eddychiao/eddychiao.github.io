@@ -9,6 +9,7 @@ import ContactPageRoundedIcon from '@mui/icons-material/ContactPageRounded';
 // import SportsEsportsRoundedIcon from '@mui/icons-material/SportsEsportsRounded';
 import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import WavingHandRoundedIcon from '@mui/icons-material/WavingHandRounded';
+import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Home.css';
 
@@ -54,6 +55,9 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       case 'minigames':
         navigate('/minigames'); // Navigate to the minigames page
         break;
+      case 'download resume':
+        window.open('/files/resume_summer2025.pdf', '_blank'); // Open resume in a new tab
+        break;
       default:
         navigate('/'); // Default to home if no match
     }
@@ -69,13 +73,13 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           sx: {
             fontSize: '1.4rem',
             fontFamily: 'Urbanist, sans-serif',
-            backgroundColor: theme.buttonColor,
+            backgroundColor: title === 'download resume' ? theme.headerColor : theme.buttonColor,
           },
         },
       }}
     >
       <Fab
-        style={{ backgroundColor: theme.buttonColor, }}
+        style={{ backgroundColor: title === 'download resume' ? theme.headerColor : theme.buttonColor, }}
         color="secondary"
         aria-label={title}
         onClick={() => handleFabClick(title)} // Map Fab click to navigation logic
@@ -111,11 +115,12 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             }}
           >
             {createTooltip('about', <WavingHandRoundedIcon />)}
-            {createTooltip('photography', <PhotoCameraRoundedIcon />)}
             {createTooltip('coding', <CodeRoundedIcon />)}
+            {createTooltip('photography', <PhotoCameraRoundedIcon />)}
             {/* {createTooltip('music', <MusicNoteRoundedIcon />)} */}
             {/* {createTooltip('minigames', <SportsEsportsRoundedIcon />)} */}
             {createTooltip('contact', <ContactPageRoundedIcon />)}
+            {createTooltip('download resume', <DownloadRoundedIcon />)}
           </Box>
         </div>
       </div>
