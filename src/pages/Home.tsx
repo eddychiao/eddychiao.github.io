@@ -10,13 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 import * as constants from '../const/enum';
-
-interface Theme {
-  backgroundColor: string;
-  headerColor: string;
-  textColor: string;
-  buttonColor: string;
-}
+import { Theme } from '../context/ThemeContext';
 
 interface HomeProps {
   theme: Theme;

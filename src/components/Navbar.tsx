@@ -2,13 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
 import './Navbar.css';
-
-interface Theme {
-  backgroundColor: string;
-  headerColor: string;
-  textColor: string;
-  buttonColor: string;
-}
+import { Theme } from '../context/ThemeContext';
 
 interface NavbarProps {
   theme: Theme;

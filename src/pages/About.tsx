@@ -3,13 +3,7 @@ import './About.css';
 import TechStack from '../components/TechStack';
 import TimelineAbout from '../components/TimelineAbout';
 import useTypingAnimation from '../hooks/useTypingAnimation';
-
-interface Theme {
-  backgroundColor: string;
-  headerColor: string;
-  textColor: string;
-  buttonColor: string;
-}
+import { Theme } from '../context/ThemeContext';
 
 interface AboutProps {
   theme: Theme;
@@ -37,7 +31,7 @@ const About: React.FC<AboutProps> = ({ theme }) => {
           <div className="About-description" style={{ color: theme.textColor }}>
             Hey, I'm Eddy Chiao! I was born in California, raised in Georgia, and am now currently living in New York City.
             <br /><br />
-            I graduated with B.S. and M.S. degrees in Computer Science from Georgia Tech, and now work as a software engineer. When I was younger I had a huge obsession with building things with Legos, and I feel like coding gives me the same freedom to make almost anything cool and/or random that I can think of.
+            I graduated with B.S. and M.S. degrees in Computer Science from Georgia Tech, and now work as a software engineer. When I was younger I had a huge obsession with building things with Legos, and I feel like coding gives me the same freedom to make almost anything.
             <br /><br />
             As for some hobbies — I enjoy taking photos, playing piano/guitar, and playing different sports (volleyball, spikeball, tennis) if the weather permits. I also enjoy playing video games and reading a book from time to time (if you have any recs please let me know)!
           </div>

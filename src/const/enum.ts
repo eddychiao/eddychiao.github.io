@@ -1,8 +1,8 @@
 export const colors = {
     porcelain: {
-      backgroundColor: '#F0EDE8',
+      backgroundColor: '#F8F7F5',
       headerColor: '#1A52C8',
-      textColor: '#C4261A',
+      textColor: '#9A1A10',
       buttonColor: '#468A96',
     },
     katana: {

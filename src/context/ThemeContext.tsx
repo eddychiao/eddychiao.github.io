@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-interface Theme {
+export interface Theme {
   backgroundColor: string;
   headerColor: string;
   textColor: string;
@@ -8,9 +8,9 @@ interface Theme {
 }
 
 const defaultTheme: Theme = {
-  backgroundColor: '#F0EDE8',
+  backgroundColor: '#F8F7F5',
   headerColor: '#1A52C8',
-  textColor: '#C4261A',
+  textColor: '#9A1A10',
   buttonColor: '#468A96',
 };
 

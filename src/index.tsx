@@ -23,13 +23,13 @@ const App: React.FC = () => {
 
   return (
     <>
-      {location.pathname !== '/' && <Navbar theme={theme}/>} {/* Show Navbar only if not on the home page */}
+      {location.pathname !== '/' && <Navbar theme={theme} />}
       <ThemeOverlay />
       <Routes>
-        <Route path="/" element={<Home theme={theme} />} /> {/* Pass theme to Home */}
-        <Route path="/about" element={<About theme={theme}/>} />
-        <Route path="/projects" element={<Projects theme={theme}/>} />
-        <Route path="/contact" element={<Contact theme={theme}/>} />
+        <Route path="/" element={<Home theme={theme} />} />
+        <Route path="/about" element={<About theme={theme} />} />
+        <Route path="/projects" element={<Projects theme={theme} />} />
+        <Route path="/contact" element={<Contact theme={theme} />} />
       </Routes>
     </>
   );

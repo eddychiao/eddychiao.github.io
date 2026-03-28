@@ -1,12 +1,6 @@
 import React from 'react';
 import './TimelineAbout.css';
-
-interface Theme {
-  backgroundColor: string;
-  headerColor: string;
-  textColor: string;
-  buttonColor: string;
-}
+import { Theme } from '../context/ThemeContext';
 
 type EntryType = 'education' | 'professional experience' | 'internship';
 

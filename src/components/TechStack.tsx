@@ -10,13 +10,7 @@ import {
 import { DiJava } from 'react-icons/di';
 import { BsCursorFill, BsRobot } from 'react-icons/bs';
 import './TechStack.css';
-
-interface Theme {
-  backgroundColor: string;
-  headerColor: string;
-  textColor: string;
-  buttonColor: string;
-}
+import { Theme } from '../context/ThemeContext';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type IconComponent = React.ComponentType<any>;
