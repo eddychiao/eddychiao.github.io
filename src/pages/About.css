@@ -61,7 +61,7 @@
 
 .About-title {
   font-family: 'Geist', sans-serif;
-  font-size: 4.6vw;
+  font-size: clamp(1.6rem, 4.6vw, 3.5rem);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -78,7 +78,7 @@
 
 .About-description {
   font-family: 'Geist', sans-serif;
-  font-size: 1.2vw;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
   font-weight: 400;
   line-height: 1.75;
   max-width: 60ch;

@@ -17,9 +17,9 @@
 .toggle-option-mist-button,
 .toggle-option-porcelain-button,
 .toggle-option-sakura-button {
-    width: 22px !important;
-    height: 22px !important;
-    min-width: 22px !important;
+    width: clamp(1rem, 1.375rem, 1.75rem) !important;
+    height: clamp(1rem, 1.375rem, 1.75rem) !important;
+    min-width: clamp(1rem, 1.375rem, 1.75rem) !important;
     padding: 0 !important;
     border-radius: 5px !important;
     border: 1.5px solid rgba(0,0,0,0.25) !important;
