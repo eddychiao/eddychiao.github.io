@@ -1,36 +1,35 @@
-# Personal Website/Portfolio
+# Eddy Chiao — Personal Portfolio
 
-This project was created with React, uses Typescript to run. Building this as a way of showcasing personal achievements and also learning more webdev tactics.
+Live site: [eddychiao.github.io](https://eddychiao.github.io/)
 
-## Available Scripts
+A personal portfolio and photography site built to showcase projects, experience, and photography work.
 
-Commands to run:
+## Pages
 
-### `npm start`
+- **Home** — Landing page with typing animation and an interactive 3D tilt card with mouse-tracked parallax effects
+- **About** — Bio, tech stack, and work experience timeline
+- **Projects** — Project showcase *(in progress)*
+- **Photography** — Photo gallery
+- **Contact** — Links to email, LinkedIn, GitHub, and Instagram
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-The page will reload if you make edits.\
+## Features
 
-### `npm test`
+- 9 switchable color themes with localStorage persistence
+- Typing animations on page titles
+- Responsive layout across screen sizes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- React 19 + TypeScript
+- React Router v7
+- Material-UI, Ant Design, Bootstrap
+- Tailwind CSS
+- Deployed via GitHub Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running Locally
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) into your project so you have full control. All the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. Then you’re on your own.
+```bash
+npm install
+npm start   # http://localhost:3000
+npm run build  # production build → /build
+```

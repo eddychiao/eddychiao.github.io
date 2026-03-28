@@ -1,8 +1,8 @@
 export const colors = {
     porcelain: {
       backgroundColor: '#F0EDE8',
-      headerColor: '#266DD3',
-      textColor: '#DE5246',
+      headerColor: '#1A52C8',
+      textColor: '#C4261A',
       buttonColor: '#468A96',
     },
     katana: {
@@ -16,12 +16,6 @@ export const colors = {
       headerColor: '#B5294E',
       textColor: '#5C3D2E',
       buttonColor: '#8B6F8E',
-    },
-    jade: {
-      backgroundColor: '#EBF4EE',
-      headerColor: '#1A6B4A',
-      textColor: '#8B4513',
-      buttonColor: '#5B9E7F',
     },
     lotus: {
       backgroundColor: '#F2EEF8',

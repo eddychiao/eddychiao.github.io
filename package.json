@@ -2,7 +2,7 @@
   "name": "photo-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://eddychiao.github.io/portfolio",
+  "homepage": "https://eddychiao.github.io",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",

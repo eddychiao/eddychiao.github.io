@@ -11,7 +11,6 @@
 .toggle-option-crimson-button,
 .toggle-option-dusk-button,
 .toggle-option-dynasty-button,
-.toggle-option-jade-button,
 .toggle-option-katana-button,
 .toggle-option-lotus-button,
 .toggle-option-matcha-button,
@@ -60,7 +59,6 @@
 .toggle-option-crimson-button:hover,
 .toggle-option-dusk-button:hover,
 .toggle-option-dynasty-button:hover,
-.toggle-option-jade-button:hover,
 .toggle-option-katana-button:hover,
 .toggle-option-lotus-button:hover,
 .toggle-option-matcha-button:hover,
@@ -74,7 +72,6 @@
 .toggle-option-crimson-button.Mui-selected,
 .toggle-option-dusk-button.Mui-selected,
 .toggle-option-dynasty-button.Mui-selected,
-.toggle-option-jade-button.Mui-selected,
 .toggle-option-katana-button.Mui-selected,
 .toggle-option-lotus-button.Mui-selected,
 .toggle-option-matcha-button.Mui-selected,
@@ -91,10 +88,9 @@
 .toggle-option-crimson-button   { background: linear-gradient(155deg, #180D0D 45%, #E84040 55%); }
 .toggle-option-dusk-button      { background: linear-gradient(155deg, #1C1624 45%, #7C5CBF 55%); }
 .toggle-option-dynasty-button   { background: linear-gradient(155deg, #B8860B 45%, #8B1A1A 55%); }
-.toggle-option-jade-button      { background: linear-gradient(155deg, #1A6B4A 45%, #8B4513 55%); }
 .toggle-option-katana-button    { background: linear-gradient(155deg, #000000 45%, #A799B7 55%); }
 .toggle-option-lotus-button     { background: linear-gradient(155deg, #6B2D8B 45%, #5B8C5A 55%); }
 .toggle-option-matcha-button    { background: linear-gradient(155deg, #3B6438 45%, #7A5C30 55%); }
 .toggle-option-mist-button      { background: linear-gradient(155deg, #3D5A73 45%, #7A9EB5 55%); }
-.toggle-option-porcelain-button { background: linear-gradient(155deg, #266DD3 45%, #DE5246 55%); }
+.toggle-option-porcelain-button { background: linear-gradient(155deg, #1A52C8 45%, #C4261A 55%); }
 .toggle-option-sakura-button    { background: linear-gradient(155deg, #B5294E 45%, #8B6F8E 55%); }

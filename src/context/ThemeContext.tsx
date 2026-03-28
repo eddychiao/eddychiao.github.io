@@ -9,8 +9,8 @@ interface Theme {
 
 const defaultTheme: Theme = {
   backgroundColor: '#F0EDE8',
-  headerColor: '#266DD3',
-  textColor: '#DE5246',
+  headerColor: '#1A52C8',
+  textColor: '#C4261A',
   buttonColor: '#468A96',
 };
 

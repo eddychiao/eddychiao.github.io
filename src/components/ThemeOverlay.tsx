@@ -57,7 +57,6 @@ const ThemeOverlay: React.FC = () => {
       <ToggleButton className="toggle-option-crimson-button"   value="crimson"    aria-label="crimson"    data-label="Crimson"   />
       <ToggleButton className="toggle-option-dusk-button"      value="dusk"       aria-label="dusk"       data-label="Dusk"      />
       <ToggleButton className="toggle-option-dynasty-button"   value="dynasty"    aria-label="dynasty"    data-label="Dynasty"   />
-      <ToggleButton className="toggle-option-jade-button"      value="jade"       aria-label="jade"       data-label="Jade"      />
       <ToggleButton className="toggle-option-katana-button"    value="katana"     aria-label="katana"     data-label="Katana"    />
       <ToggleButton className="toggle-option-lotus-button"     value="lotus"      aria-label="lotus"      data-label="Lotus"     />
       <ToggleButton className="toggle-option-matcha-button"    value="matcha"     aria-label="matcha"     data-label="Matcha"    />
