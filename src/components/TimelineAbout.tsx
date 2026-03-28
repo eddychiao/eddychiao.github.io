@@ -13,6 +13,12 @@ interface TimelineEntry {
 	logoHeight?: string;
 }
 
+const yearsInRole = (year: string): string | null => {
+	const [start, end] = year.split("-").map(Number);
+	if (!start || !end) return null;
+	return String(end - start);
+};
+
 // ── Add / remove entries here ──────────────────────────────────────────────
 const entries: TimelineEntry[] = [
 	{
@@ -101,13 +107,26 @@ const TimelineAbout: React.FC<{ theme: Theme }> = ({ theme }) => (
 						style={{ color: theme.headerColor }}>
 						{entry.subtitle}
 					</div>
-					<div
-						className="Timeline-tag"
-						style={{
-							color: theme.buttonColor,
-							borderColor: theme.buttonColor,
-						}}>
-						{entry.type}
+					<div className="Timeline-tags">
+						<div
+							className="Timeline-tag"
+							style={{
+								color: theme.buttonColor,
+								borderColor: theme.buttonColor,
+							}}>
+							{entry.type}
+						</div>
+						{entry.type === "professional experience" &&
+							yearsInRole(entry.year) && (
+								<div
+									className="Timeline-tag"
+									style={{
+										color: theme.headerColor,
+										borderColor: theme.headerColor,
+									}}>
+									{yearsInRole(entry.year)} years
+								</div>
+							)}
 					</div>
 				</div>
 			</div>

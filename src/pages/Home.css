@@ -127,6 +127,39 @@
   50%       { opacity: 0; }
 }
 
+@media (max-width: 768px) {
+  .Home {
+    flex-direction: column;
+    padding: 2.5rem 6%;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .Home-left {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .Home-right {
+    flex: 0 0 auto;
+    width: 60vw;
+    max-width: 260px;
+  }
+
+  .Home-title {
+    font-size: 2.4rem;
+  }
+
+  .Home-description {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .Home-nav-label {
+    font-size: 0.75rem;
+  }
+}
+
 .Home-image {
   width: 100%;
   max-width: 100%;

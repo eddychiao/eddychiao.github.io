@@ -2,7 +2,7 @@ export const colors = {
     porcelain: {
       backgroundColor: '#F8F7F5',
       headerColor: '#1A52C8',
-      textColor: '#9A1A10',
+      textColor: '#B80320',
       buttonColor: '#468A96',
     },
     katana: {

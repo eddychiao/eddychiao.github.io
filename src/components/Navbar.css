@@ -67,3 +67,22 @@
   border-radius: 1px;
   opacity: 0.5;
 }
+
+@media (max-width: 768px) {
+  .Navbar {
+    padding: 0 4%;
+  }
+
+  .Navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .Navbar-links {
+    gap: 0;
+  }
+
+  .Navbar-link {
+    font-size: 0.62rem;
+    padding: 0.4rem 0.4rem;
+  }
+}

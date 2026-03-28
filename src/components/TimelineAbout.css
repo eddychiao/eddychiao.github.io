@@ -77,9 +77,34 @@
   opacity: 1;
 }
 
+.Timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 768px) {
+  .Timeline-row {
+    grid-template-columns: 3rem 1.5rem 1fr;
+    gap: 0 0.7rem;
+  }
+
+  .Timeline-year {
+    font-size: 0.75rem;
+  }
+
+  .Timeline-title {
+    font-size: 0.95rem;
+  }
+
+  .Timeline-subtitle {
+    font-size: 0.82rem;
+  }
+}
+
 .Timeline-tag {
   display: inline-block;
-  margin-top: 0.45rem;
   font-family: 'Geist', sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
