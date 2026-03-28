@@ -1,7 +1,7 @@
 import React from 'react';
 import './Projects.css';
 
-import * as constants from '../const/enum';
+// import * as constants from '../const/enum';
 
 interface Theme {
   backgroundColor: string;

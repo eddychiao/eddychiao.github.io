@@ -12,7 +12,7 @@ import * as constants from '../const/enum';
 const themes = constants.colors;
 
 const ThemeOverlay: React.FC = () => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   const [view, setView] = React.useState<string>(() => {
     // Retrieve the saved theme name from localStorage or default to 'vermilion'
     return localStorage.getItem('themeName') || 'porcelain';
