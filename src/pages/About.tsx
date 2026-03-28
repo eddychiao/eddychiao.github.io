@@ -1,6 +1,8 @@
 import React from 'react';
 import './About.css';
+import TechStack from '../components/TechStack';
 import TimelineAbout from '../components/TimelineAbout';
+import useTypingAnimation from '../hooks/useTypingAnimation';
 
 interface Theme {
   backgroundColor: string;
@@ -13,42 +15,63 @@ interface AboutProps {
   theme: Theme;
 }
 
+const TITLE = 'About Me';
+
 const About: React.FC<AboutProps> = ({ theme }) => {
+  const { typed, done } = useTypingAnimation(TITLE, 75);
+
   return (
     <div className="About" style={{ backgroundColor: theme.backgroundColor }}>
-      <div className="About-content">
-        <div className="About-left">
-          <div className="About-body" style={{ color: theme.headerColor }}>
-            About Me
+
+      {/* ── Hero: title + photo ─────────────────────────────────── */}
+      <div className="About-hero">
+        <div className="About-hero-left">
+          <div className="About-title" style={{ color: theme.headerColor, position: 'relative' }}>
+            <span className="About-ghost">{TITLE}</span>
+            <span className="About-typed">
+              {typed}
+              {!done && <span className="About-cursor" style={{ color: theme.headerColor }}>|</span>}
+            </span>
           </div>
+          <div className="About-divider" style={{ backgroundColor: theme.buttonColor }} />
           <div className="About-description" style={{ color: theme.textColor }}>
-            Hello 👋, I'm Eddy Chiao! I made this website as a portfolio showing and consolidating the different (and slightly unrelated) interests I have.
-  
+            Hey, I'm Eddy Chiao! I was born in California, raised in Georgia, and am now currently living in New York City.
             <br /><br />
-  
-            I graduated with a BS and MS in Computer Science from Georgia Tech and currently work as a software engineer. During college, I worked internships at Capital One and American Express, and I started working at Microsoft soon after graduating. I lived in Atlanta (Georgia) for most of my life, and as of Fall 2024 I am now living in New York City.
-  
+            I graduated with B.S. and M.S. degrees in Computer Science from Georgia Tech, and now work as a software engineer. When I was younger I had a huge obsession with building things with Legos, and I feel like coding gives me the same freedom to make almost anything cool and/or random that I can think of.
             <br /><br />
-  
-            Most of my experience is in web development, and I also have experience with developing in Python and working with a few data science techniques.
-  
-            I have a wide range of interests, including photography, music, volleyball, and many others. You can find some of my work on this website!
+            As for some hobbies — I enjoy taking photos, playing piano/guitar, and playing different sports (volleyball, spikeball, tennis) if the weather permits. I also enjoy playing video games and reading a book from time to time (if you have any recs please let me know)!
           </div>
         </div>
-        <div className="About-right">
-          <img 
-            src="/images/fb_pic.jpg" 
-            alt="About Page" 
+        <div className="About-hero-right">
+          <img
+            src="/images/fb_pic.jpg"
+            alt="Eddy Chiao"
             className="About-image"
             style={{ pointerEvents: 'none' }}
           />
         </div>
       </div>
-      <div className="About-timeline">
-        <TimelineAbout theme={theme}/>
-      </div>
+
+      {/* ── Tech Stack ──────────────────────────────────────────── */}
+      <section className="About-section">
+        <div className="About-section-header" style={{ color: theme.headerColor }}>
+          Tech Stack
+        </div>
+        <div className="About-section-divider" style={{ backgroundColor: theme.buttonColor }} />
+        <TechStack theme={theme} />
+      </section>
+
+      {/* ── Timeline ────────────────────────────────────────────── */}
+      <section className="About-section">
+        <div className="About-section-header" style={{ color: theme.headerColor }}>
+          Experience
+        </div>
+        <div className="About-section-divider" style={{ backgroundColor: theme.buttonColor }} />
+        <TimelineAbout theme={theme} />
+      </section>
+
     </div>
   );
-}
+};
 
 export default About;

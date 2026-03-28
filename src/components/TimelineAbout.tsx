@@ -1,72 +1,65 @@
-import * as React from 'react';
-import Timeline from '@mui/lab/Timeline';
-import TimelineItem from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
-import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
-import Typography from '@mui/material/Typography';
+import React from 'react';
+import './TimelineAbout.css';
 
 interface Theme {
-    backgroundColor: string;
-    headerColor: string;
-    textColor: string;
-    buttonColor: string;
-  }
-  
-  interface AboutProps {
-    theme: Theme;
-  }
-
-
-const TimelineAbout: React.FC<AboutProps> = ({ theme }) => {
-
-  // Function that creates a timeline item
-  const createTimelineItem = (year: string, title: string, description: string, icon: React.ReactNode, isStartingNode: boolean) => (
-    <TimelineItem>
-      <TimelineOppositeContent
-        sx={{ m: 'auto 0' }}
-        align="right"
-        variant="body2"
-        fontSize={'1.2rem'}
-        fontFamily={'Urbanist, sans-serif'}
-        color={theme.headerColor}
-      >
-        {year}
-      </TimelineOppositeContent>
-      <TimelineSeparator>
-        { !isStartingNode && <TimelineConnector /> }
-        <TimelineDot sx={{ backgroundColor: theme.buttonColor}}>
-          {icon}
-        </TimelineDot>
-        <TimelineConnector />
-      </TimelineSeparator>
-      <TimelineContent 
-        sx={{ py: '12px', px: 2 }} 
-        fontFamily={'Urbanist, sans-serif'} 
-        color={theme.textColor}>
-        <Typography variant="h6" component="span">
-          {title}
-        </Typography>
-        <Typography>{description}</Typography>
-      </TimelineContent>
-    </TimelineItem>
-  );
-
-  return (
-    <Timeline >
-      {createTimelineItem('2016', 'Started College', 'Studied at Georgia Tech', <SchoolRoundedIcon/>, true)}
-      {createTimelineItem('2018', 'Internship', 'Software Engineer @ CodeMettle', <CodeRoundedIcon />, false)}
-      {createTimelineItem('2019', 'Internship', 'Software Engineer @ Capital One', <CodeRoundedIcon />, false)}
-      {createTimelineItem('2020', 'Internship', 'Software Engineer @ American Express', <CodeRoundedIcon />, false)}
-      {createTimelineItem('2020', 'Undergraduate Degree', 'B.S in Computer Science', <SchoolRoundedIcon />, false)}
-      {createTimelineItem('2021', 'Graduate Degree', 'M.S in Computer Science', <SchoolRoundedIcon />, false)}
-      {createTimelineItem('2021', 'Full-Time Employee', 'Software Engineer I/II @ Microsoft', <CodeRoundedIcon />, false)}
-    </Timeline>
-  );
+  backgroundColor: string;
+  headerColor: string;
+  textColor: string;
+  buttonColor: string;
 }
+
+type EntryType = 'education' | 'professional experience' | 'internship';
+
+interface TimelineEntry {
+  year: string;
+  title: string;
+  subtitle: string;
+  type: EntryType;
+}
+
+// ── Add / remove entries here ──────────────────────────────────────────────
+const entries: TimelineEntry[] = [
+  { year: '2021-2025', title: 'Microsoft',                       subtitle: 'Software Engineer I → II',        type: 'professional experience'      },
+  { year: '2020-2021', title: 'Georgia Institute of Technology', subtitle: 'M.S. in Computer Science (Artificial Intelligence)',           type: 'education' },
+  { year: '2020', title: 'American Express',                subtitle: 'Software Engineer Intern',        type: 'internship'      },
+  { year: '2019', title: 'Capital One',                     subtitle: 'Software Engineer Intern',        type: 'internship'      },
+  { year: '2018', title: 'CodeMettle',                      subtitle: 'Software Engineer Intern',        type: 'internship'      },
+  { year: '2016-2020', title: 'Georgia Institute of Technology', subtitle: 'B.S. in Computer Science',           type: 'education' },
+];
+// ────────────────────────────────────────────────────────────────────────────
+
+const TimelineAbout: React.FC<{ theme: Theme }> = ({ theme }) => (
+  <div className="Timeline">
+    {entries.map((entry, i) => (
+      <div className="Timeline-row" key={i}>
+
+        <div className="Timeline-year" style={{ color: theme.headerColor }}>
+          {entry.year}
+        </div>
+
+        <div className="Timeline-spine">
+          <div className="Timeline-dot" style={{ backgroundColor: theme.buttonColor }} />
+          {i < entries.length - 1 && (
+            <div className="Timeline-line" style={{ backgroundColor: theme.buttonColor }} />
+          )}
+        </div>
+
+        <div className="Timeline-body" style={{ color: theme.textColor }}>
+          <div className="Timeline-title">{entry.title}</div>
+          <div className="Timeline-subtitle" style={{ color: theme.headerColor }}>
+            {entry.subtitle}
+          </div>
+          <div
+            className="Timeline-tag"
+            style={{ color: theme.buttonColor, borderColor: theme.buttonColor }}
+          >
+            {entry.type}
+          </div>
+        </div>
+
+      </div>
+    ))}
+  </div>
+);
 
 export default TimelineAbout;

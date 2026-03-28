@@ -1,14 +1,12 @@
 import React from 'react';
+import useTypingAnimation from '../hooks/useTypingAnimation';
 import './Contact.css';
-
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import Stack from '@mui/material/Stack';
 
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
 
 interface Theme {
   backgroundColor: string;
@@ -21,66 +19,60 @@ interface ContactProps {
   theme: Theme;
 }
 
+const contactItems = [
+  { label: 'eddychiao@gmail.com', icon: <MailOutlineRoundedIcon fontSize="small" />, href: 'mailto:eddychiao@gmail.com' },
+  { label: 'LinkedIn',            icon: <LinkedInIcon fontSize="small" />,            href: 'https://www.linkedin.com/in/edward-chiao/' },
+  { label: 'GitHub',              icon: <GitHubIcon fontSize="small" />,              href: 'https://github.com/eddychiao' },
+  { label: 'Instagram',           icon: <InstagramIcon fontSize="small" />,           href: 'https://www.instagram.com/chiao.jpg/' },
+];
+
+const TITLE = "Let's get in touch!";
+
 const Contact: React.FC<ContactProps> = ({ theme }) => {
-
-  const handleFabClick = (title: string) => {
-    switch (title) {
-      case 'Email':
-        window.open('mailto:eddychiao@gmail.com', '_blank');
-        break;
-      case 'LinkedIn':
-        window.open('https://www.linkedin.com/in/edward-chiao/', '_blank');
-        break;
-      case 'GitHub':
-        window.open('https://github.com/eddychiao', '_blank');
-        break;
-      case 'Instagram':
-        window.open('https://www.instagram.com/chiao.jpg/', '_blank');
-        break;
-      default:
-        console.error('Unknown action:', title);
-    }
-  };
-
-  const createTooltip = (title: string, caption: string, icon: React.ReactNode) => (
-    <Fab
-      
-      variant="extended"
-      style={{ backgroundColor: theme.buttonColor }}
-      color="secondary"
-      aria-label={title}
-      onClick={() => handleFabClick(title)} // Map Fab click to navigation logic
-    >
-      {icon}
-      <div className="Contact-fab">
-        {caption}
-      </div>
-    </Fab>
-  );
+  const { typed, done } = useTypingAnimation(TITLE, 75);
 
   return (
-    <div className="Contact" style={{backgroundColor: theme.backgroundColor}}>
-        <div className="Contact-left">
-            <div className="Contact-header" style={{ color: theme.headerColor }}>
-            Let's get in touch!
-            </div>
-            <div className="Contact-description" style={{ color: theme.textColor }}>
-            Here are a few ways you can reach me:
-            </div>
-        </div>
-        <div className='Contact-right'>
-          <Box sx={{ width: '100%' }}>
-            <Stack spacing={2}>
-              {createTooltip('Email', 'eddychiao@gmail.com', <MailOutlineRoundedIcon sx={{ mr: 1 }}/>)}
-              {createTooltip('LinkedIn', 'LinkedIn', <LinkedInIcon sx={{ mr: 1 }}/>)}
-              {createTooltip('GitHub', 'GitHub', <GitHubIcon sx={{ mr: 1 }}/>)}
-              {createTooltip('Instagram', 'Photography', <InstagramIcon sx={{ mr: 1 }}/>)}
-            </Stack>
-          </Box>
+    <div className="Contact" style={{ backgroundColor: theme.backgroundColor }}>
 
+      <div className="Contact-left">
+        <div className="Contact-header" style={{ color: theme.headerColor, position: 'relative' }}>
+          <span className="Contact-ghost">{TITLE}</span>
+          <span className="Contact-typed">
+            {typed}
+            {!done && <span className="Contact-cursor" style={{ color: theme.headerColor }}>|</span>}
+          </span>
         </div>
+        <div className="Contact-divider" style={{ backgroundColor: theme.buttonColor }} />
+        <div className="Contact-description" style={{ color: theme.textColor }}>
+          Here are a few ways you can reach me.
+        </div>
+      </div>
+
+      <div className="Contact-right">
+        <nav className="Contact-nav-list">
+          {contactItems.map(item => (
+            <a
+              key={item.label}
+              className="Contact-nav-item"
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: theme.textColor }}
+            >
+              <span className="Contact-nav-icon" style={{ color: theme.buttonColor }}>
+                {item.icon}
+              </span>
+              <span className="Contact-nav-label">{item.label}</span>
+              <span className="Contact-nav-external" style={{ color: theme.buttonColor }}>
+                <NorthEastRoundedIcon sx={{ fontSize: '0.75rem' }} />
+              </span>
+            </a>
+          ))}
+        </nav>
+      </div>
+
     </div>
   );
-}
+};
 
 export default Contact;

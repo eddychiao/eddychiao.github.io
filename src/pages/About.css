@@ -1,64 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
 .About {
-  text-align: center;
-  display: flex;
-  flex-direction: column; /* Change to column layout to stack sections */
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  padding-left: 20%;
-  padding-right: 20%;
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
-}
-
-.About-content {
-  display: flex;
-  flex-direction: row; /* Row layout for left and right sections */
-  align-items: center;
-  justify-content: space-between;
-  width: 100%; /* Ensure it spans the full width */
-  flex: 1; /* Allow it to take up most of the space */
-}
-
-.About-left {
-  flex: 3; /* Takes up 3/5 of the row */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin-right: 20px;
+  align-items: flex-start;
+  padding: 96px 13% 80px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  gap: 5rem;
 }
 
-.About-right {
-  flex: 2; /* Takes up 2/5 of the row */
+/* ── Hero ─────────────────────────────────────────────────────────── */
+
+.About-hero {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 3vw;
+  width: 100%;
 }
 
-.About-body {
-  padding-top: 15%;
-  font-size: calc(60px + 3vmin);
-  font-family: 'Abril Fatface', cursive;
-  text-align: left;
+.About-hero-left {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.About-hero-right {
+  flex: 0 0 280px;
+  display: flex;
+  justify-content: flex;
+  align-items: flex-start;
+}
+
+.About-ghost {
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  display: block;
+}
+
+.About-typed {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.About-cursor {
+  display: inline-block;
+  font-weight: 300;
+  animation: blink 0.55s step-start infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.About-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 4.6vw;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.About-divider {
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  opacity: 0.7;
 }
 
 .About-description {
-  flex: 3;
-  font-family: 'Urbanist', sans-serif;
-  font-size: calc(10px + 1vmin);
-  text-align: left;
+  font-family: 'Geist', sans-serif;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 1.75;
+  max-width: 60ch;
+  opacity: 0.85;
 }
 
 .About-image {
-  max-width: 90%;
-  height: auto;
-  border-radius: 50%; /* Makes the image circular */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for better aesthetics */
-  object-fit: cover; /* Ensures the image fits well within the circle */
+  width: 100%;
+  height: 340px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
 }
 
-.About-timeline {
-  width: 100%; /* Full width */
-  text-align: center; /* Center align content */
-  margin-top: 20px; /* Add spacing above the timeline */
-  flex: 0; /* Prevent it from growing */
+/* ── Shared section styles ────────────────────────────────────────── */
+
+.About-section {
+  width: 100%;
+}
+
+.About-section-header {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.7rem;
+}
+
+.About-section-divider {
+  width: 2rem;
+  height: 2.5px;
+  border-radius: 2px;
+  margin-bottom: 1.40rem;
+  opacity: 0.7;
 }

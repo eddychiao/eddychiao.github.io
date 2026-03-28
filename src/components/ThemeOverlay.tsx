@@ -15,11 +15,11 @@ const ThemeOverlay: React.FC = () => {
   const { theme, setTheme } = useTheme();
   const [view, setView] = React.useState<string>(() => {
     // Retrieve the saved theme name from localStorage or default to 'vermilion'
-    return localStorage.getItem('themeName') || 'vermilion';
+    return localStorage.getItem('themeName') || 'porcelain';
   });
 
   const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
-    gap: '0.4rem',
+    gap: '0.25rem',
     [`& .${toggleButtonGroupClasses.firstButton}, & .${toggleButtonGroupClasses.middleButton}`]:
       {
         borderBottomRightRadius: (theme.vars || theme).shape.borderRadius,
@@ -54,15 +54,16 @@ const ThemeOverlay: React.FC = () => {
       aria-label="theme selection"
       orientation="vertical"
     >
-      <ToggleButton className="toggle-option-vermilion-button" value="vermilion" aria-label="vermilion">
-        <div className="toggle-option-vermilion-text">Vermilion</div>
-      </ToggleButton>
-      <ToggleButton className="toggle-option-porcelain-button" value="porcelain" aria-label="porcelain">
-        <div className="toggle-option-porcelain-text">Porcelain</div>
-      </ToggleButton>
-      <ToggleButton className="toggle-option-katana-button" value="katana" aria-label="katana">
-        <div className="toggle-option-katana-text">Katana</div>
-      </ToggleButton>
+      <ToggleButton className="toggle-option-crimson-button"   value="crimson"    aria-label="crimson"    data-label="Crimson"   />
+      <ToggleButton className="toggle-option-dusk-button"      value="dusk"       aria-label="dusk"       data-label="Dusk"      />
+      <ToggleButton className="toggle-option-dynasty-button"   value="dynasty"    aria-label="dynasty"    data-label="Dynasty"   />
+      <ToggleButton className="toggle-option-jade-button"      value="jade"       aria-label="jade"       data-label="Jade"      />
+      <ToggleButton className="toggle-option-katana-button"    value="katana"     aria-label="katana"     data-label="Katana"    />
+      <ToggleButton className="toggle-option-lotus-button"     value="lotus"      aria-label="lotus"      data-label="Lotus"     />
+      <ToggleButton className="toggle-option-matcha-button"    value="matcha"     aria-label="matcha"     data-label="Matcha"    />
+      <ToggleButton className="toggle-option-mist-button"      value="mist"       aria-label="mist"       data-label="Mist"      />
+      <ToggleButton className="toggle-option-porcelain-button" value="porcelain"  aria-label="porcelain"  data-label="Porcelain" />
+      <ToggleButton className="toggle-option-sakura-button"    value="sakura"     aria-label="sakura"     data-label="Sakura"    />
     </StyledToggleButtonGroup>
   );
 };

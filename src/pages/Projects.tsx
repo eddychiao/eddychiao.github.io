@@ -1,5 +1,5 @@
 import React from 'react';
-import './Photography.css';
+import './Projects.css';
 
 import * as constants from '../const/enum';
 
@@ -10,15 +10,16 @@ interface Theme {
   buttonColor: string;
 }
 
-interface PhotographyProps {
+interface ProjectsProps {
   theme: Theme;
 }
 
-const Photography: React.FC<PhotographyProps> = ({ theme }) => {  return (
-    <div className="Photography">
-      <header className="Photography-body">
+const Projects: React.FC<ProjectsProps> = ({ theme }) => {
+  return (
+    <div className="Projects">
+      <header className="Projects-body">
         <p>
-          PHOTOGRAPHY PAGE
+          Projects PAGE
         </p>
       </header>
       <div>
@@ -26,10 +27,10 @@ const Photography: React.FC<PhotographyProps> = ({ theme }) => {  return (
         helhaldf
         awegj;wgrjkawr
         awlergkjwarla
-        
+
       </div>
     </div>
   );
 }
 
-export default Photography;
+export default Projects;

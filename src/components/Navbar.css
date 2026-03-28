@@ -1,33 +1,69 @@
-.navbar {
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 1000;
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+.Navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  /* no shadow, no border */
 }
 
-.navbar-link-container {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    gap: 10px;
-    margin-left: auto;
+.Navbar-brand {
+  font-family: 'Palatino Linotype', 'Palatino', 'Book Antiqua', Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: auto;
+  user-select: none;
+  letter-spacing: -0.01em;
 }
 
-.navbar-links {
-    width: 50%;
+.Navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.navbar-home-icon {
-    align-items: flex-start;
-    padding: 10px 15px;
-    border-radius: 5px;
+.Navbar-link {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Geist', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.65rem;
+  display: flex;
+  align-items: center;
+  opacity: 0.45;
+  transition: opacity 0.15s ease;
+  user-select: none;
 }
 
-.navbar-item {
-    padding: 10px 15px;
-		padding-right: 0px;
-    border-radius: 5px;
+.Navbar-link:hover {
+  opacity: 0.85;
+}
+
+.Navbar-link.active {
+  opacity: 1;
+  position: relative;
+}
+
+.Navbar-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.65rem;
+  right: 0.65rem;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+  opacity: 0.5;
 }

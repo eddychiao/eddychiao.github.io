@@ -1,23 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import CssBaseline from '@mui/material/CssBaseline';
-
-import { useNavigate } from 'react-router-dom';
-
-const pages = ['Home', 
-  'About',
-  'Coding',
-  'Photography', 
-  // 'Music', 
-  // 'Minigames', 
-  'Contact',
-  'Resume'
-];
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
+import './Navbar.css';
 
 interface Theme {
   backgroundColor: string;
@@ -30,107 +14,61 @@ interface NavbarProps {
   theme: Theme;
 }
 
+const navLinks = [
+  { label: 'Home',        path: '/' },
+  { label: 'About',       path: '/about' },
+  { label: 'Projects',    path: '/projects' },
+  { label: 'Photography', path: 'https://placeholder.com', external: true },
+  { label: 'Contact',     path: '/contact' },
+  { label: 'Résumé',      path: '/files/Resume_EdwardChiao_2026.pdf', external: true },
+];
+
 const Navbar: React.FC<NavbarProps> = ({ theme }) => {
-  const navigate = useNavigate();
-  const [isSticky, setIsSticky] = useState(false);
+  const navigate  = useNavigate();
+  const location  = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsSticky(true); // Make navbar sticky when user scrolls down
-      } else {
-        setIsSticky(false); // Reset navbar to non-sticky when at the top
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleCloseNavMenu = (page: string) => {
-    switch (page) {
-      case 'Home':
-        navigate('/'); // Navigate to the home page
-        break;
-      case 'Photography':
-        navigate('/photography'); // Navigate to the photos page
-        break;
-      case 'About':
-        navigate('/about'); // Navigate to the about page
-        break;
-      case 'Contact':
-        navigate('/contact'); // Navigate to the contact page
-        break;
-      case 'Coding':
-        navigate('/coding'); // Navigate to the coding page
-        break;
-      case 'Resume':
-        window.open('/files/resume_summer2025.pdf', '_blank'); // Open resume in a new tab
-        break;
-      // case 'Music':
-      //   navigate('/music'); // Navigate to the music page
-      //   break;
-      // case 'Minigames':
-      //   navigate('/minigames'); // Navigate to the unknown page
-      //   break;
-      default:
-        navigate('/'); // Default to home if no match
+  const handleClick = (link: typeof navLinks[0]) => {
+    if (link.external) {
+      window.open(link.path, '_blank');
+    } else {
+      navigate(link.path);
     }
   };
-  
+
+  const isActive = (link: typeof navLinks[0]) =>
+    !link.external && location.pathname === link.path;
+
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <AppBar
-        position={isSticky ? 'fixed' : 'static'} // Change position dynamically
-        sx={{
-          backgroundColor: theme.backgroundColor,
-          transition: 'position 0.3s ease-in-out', // Smooth transition
-        }}
+    <nav className="Navbar" style={{ backgroundColor: theme.backgroundColor }}>
+
+      <span
+        className="Navbar-brand"
+        style={{ color: theme.headerColor }}
+        onClick={() => navigate('/')}
       >
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              sx={{
-                mr: 2,
-                display: { xs: 'none', md: 'flex' },
-                fontFamily: 'DejaVu Sans Mono, monospace',
-                fontWeight: 700,
-                color: theme.headerColor,
-              }}
-            >
-              &lt;ETC/&gt;
-            </Typography>
+        etc.
+      </span>
 
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  className={'navbar-item'}
-                  onClick={() => handleCloseNavMenu(page)}
-                >
-                  <Typography
-                    sx={{
-                      textAlign: 'center',
-                      color: theme.headerColor,
-                      fontFamily: 'DejaVu Sans Mono, monospace',
-                    }}
-                  >
-                    {page}
-                  </Typography>
-                </Button>
-              ))}
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </React.Fragment>
+      <div className="Navbar-links">
+        {navLinks.map(link => (
+          <button
+            key={link.label}
+            className={`Navbar-link${isActive(link) ? ' active' : ''}`}
+            onClick={() => handleClick(link)}
+            style={{
+              color: isActive(link) ? theme.headerColor : theme.textColor,
+            }}
+          >
+            {link.label}
+            {link.external && (
+              <NorthEastRoundedIcon sx={{ fontSize: '0.65rem', ml: '2px', opacity: 0.7 }} />
+            )}
+          </button>
+        ))}
+      </div>
+
+    </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

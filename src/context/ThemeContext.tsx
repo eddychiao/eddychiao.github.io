@@ -8,10 +8,10 @@ interface Theme {
 }
 
 const defaultTheme: Theme = {
-  backgroundColor: '#FFF1E6',
-  headerColor: '#E42015',
-  textColor: '#315C4F',
-  buttonColor: '#CDA952',
+  backgroundColor: '#F0EDE8',
+  headerColor: '#266DD3',
+  textColor: '#DE5246',
+  buttonColor: '#468A96',
 };
 
 const ThemeContext = createContext<{
