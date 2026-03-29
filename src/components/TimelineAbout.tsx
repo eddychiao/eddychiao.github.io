@@ -1,6 +1,7 @@
 import React from "react";
 import "./TimelineAbout.css";
 import { Theme } from "../context/ThemeContext";
+import TagPill from "./TagPill";
 
 type EntryType = "education" | "professional experience" | "internship";
 
@@ -108,24 +109,13 @@ const TimelineAbout: React.FC<{ theme: Theme }> = ({ theme }) => (
 						{entry.subtitle}
 					</div>
 					<div className="Timeline-tags">
-						<div
-							className="Timeline-tag"
-							style={{
-								color: theme.buttonColor,
-								borderColor: theme.buttonColor,
-							}}>
-							{entry.type}
-						</div>
+						<TagPill label={entry.type} color={theme.buttonColor} />
 						{entry.type === "professional experience" &&
 							yearsInRole(entry.year) && (
-								<div
-									className="Timeline-tag"
-									style={{
-										color: theme.headerColor,
-										borderColor: theme.headerColor,
-									}}>
-									{yearsInRole(entry.year)} years
-								</div>
+								<TagPill
+									label={`${yearsInRole(entry.year)} years`}
+									color={theme.headerColor}
+								/>
 							)}
 					</div>
 				</div>

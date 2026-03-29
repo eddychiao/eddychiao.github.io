@@ -13,8 +13,8 @@ const navLinks = [
   { label: 'About',       path: '/about' },
   { label: 'Projects',    path: '/projects' },
   { label: 'Photography', path: 'https://placeholder.com', external: true },
-  { label: 'Contact',     path: '/contact' },
   { label: 'Résumé',      path: '/files/Resume_EdwardChiao_2026.pdf', external: true },
+  { label: 'Contact',     path: '/contact' },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ theme }) => {

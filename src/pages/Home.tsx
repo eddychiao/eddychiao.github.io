@@ -20,8 +20,8 @@ const navItems = [
   { label: 'About',        icon: <PersonRoundedIcon fontSize="small" />,        href: '/about' },
   { label: 'Projects',     icon: <TerminalRoundedIcon fontSize="small" />,       href: '/projects' },
   { label: 'Photography',  icon: <CameraRoundedIcon fontSize="small" />,         href: 'https://placeholder.com', external: true },
-  { label: 'Contact',      icon: <AlternateEmailRoundedIcon fontSize="small" />, href: '/contact' },
   { label: 'Résumé',       icon: <DescriptionRoundedIcon fontSize="small" />,    href: '/files/Resume_EdwardChiao_2026.pdf', external: true },
+  { label: 'Contact',      icon: <AlternateEmailRoundedIcon fontSize="small" />, href: '/contact' },
 ];
 
 const TITLE = "Hey, I'm Eddy!";

@@ -13,7 +13,7 @@ import './TechStack.css';
 import { Theme } from '../context/ThemeContext';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type IconComponent = React.ComponentType<any>;
+export type IconComponent = React.ComponentType<any>;
 
 interface TechItem {
   name: string;
@@ -70,6 +70,11 @@ const techGroups: TechGroup[] = [
   },
 ];
 // ────────────────────────────────────────────────────────────────────────────
+
+export const techMap: Record<string, { Icon: IconComponent; color: string }> =
+  Object.fromEntries(
+    techGroups.flatMap((g) => g.items.map((item) => [item.name, { Icon: item.Icon, color: item.color }]))
+  );
 
 const TechStack: React.FC<{ theme: Theme }> = ({ theme }) => (
   <div className="TechStack">

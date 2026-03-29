@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 
 import Navbar from './components/Navbar';
 import ThemeOverlay from './components/ThemeOverlay';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Home theme={theme} />} />
         <Route path="/about" element={<About theme={theme} />} />
         <Route path="/projects" element={<Projects theme={theme} />} />
+        <Route path="/projects/:id" element={<ProjectDetail theme={theme} />} />
         <Route path="/contact" element={<Contact theme={theme} />} />
       </Routes>
     </>
