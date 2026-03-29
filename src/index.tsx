@@ -11,6 +11,7 @@ import ProjectDetail from './pages/ProjectDetail';
 
 import Navbar from './components/Navbar';
 import ThemeOverlay from './components/ThemeOverlay';
+import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import reportWebVitals from './reportWebVitals';
 
@@ -26,6 +27,7 @@ const App: React.FC = () => {
     <>
       {location.pathname !== '/' && <Navbar theme={theme} />}
       <ThemeOverlay />
+      <ScrollToTop theme={theme} />
       <Routes>
         <Route path="/" element={<Home theme={theme} />} />
         <Route path="/about" element={<About theme={theme} />} />
