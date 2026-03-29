@@ -3,7 +3,7 @@
 .Projects {
   min-height: calc(100vh - 64px);
   margin-top: 64px;
-  padding: 4rem 8% 5rem;
+  padding: 4rem 12% 5rem;
   display: flex;
   flex-direction: column;
   gap: 2.8rem;

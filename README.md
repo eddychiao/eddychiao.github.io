@@ -6,11 +6,11 @@ A personal portfolio and photography site built to showcase projects, experience
 
 ## Pages
 
-- **Home** — Landing page with typing animation and an interactive 3D tilt card with mouse-tracked parallax effects
-- **About** — Bio, tech stack, and work experience timeline
-- **Projects** — Project showcase *(in progress)*
-- **Photography** — Photo gallery
-- **Contact** — Links to email, LinkedIn, GitHub, and Instagram
+- **Home**
+- **About** — Personal bio, tech stack, and work experience timeline
+- **Projects** — List of projects I've worked on and their details _(in progress)_
+- **Photography** — Redirects to my photography website
+- **Contact** — Links to my email, LinkedIn, GitHub, and Instagram
 
 ## Features
 
