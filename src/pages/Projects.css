@@ -1,92 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 .Projects {
-  min-height: calc(100vh - 64px);
-  margin-top: 64px;
-  padding: 4rem 12% 5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.8rem;
+	min-height: calc(100vh - 64px);
+	padding: 96px 13% 80px;
+	display: flex;
+	flex-direction: column;
+	gap: 2.8rem;
 }
 
 /* ── Header section ─────────────────────────────────────────── */
 
 .Projects-header-section {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .Projects-title {
-  font-family: 'Geist', sans-serif;
-  font-size: clamp(1.6rem, 4.6vw, 3.5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 0.75rem;
+	font-family: "Geist", sans-serif;
+	font-size: clamp(1.6rem, 4.6vw, 3.5rem);
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	margin-bottom: 0.75rem;
 }
 
 /* Ghost keeps layout width stable during typing */
 .Projects-ghost {
-  visibility: hidden;
-  display: block;
-  height: 0;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-  -webkit-user-select: none;
+	visibility: hidden;
+	display: block;
+	height: 0;
+	overflow: hidden;
+	pointer-events: none;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 .Projects-typed {
-  display: block;
+	display: block;
 }
 
 .Projects-cursor {
-  animation: projects-blink 0.9s step-start infinite;
-  margin-left: 1px;
+	animation: projects-blink 0.9s step-start infinite;
+	margin-left: 1px;
 }
 
 @keyframes projects-blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }
 
 .Projects-divider {
-  width: 2rem;
-  height: 2.5px;
-  border-radius: 2px;
-  margin-bottom: 1rem;
-  opacity: 0.7;
+	width: 2rem;
+	height: 2.5px;
+	border-radius: 2px;
+	margin-bottom: 1rem;
+	opacity: 0.7;
 }
 
 .Projects-description {
-  font-family: 'Geist', sans-serif;
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
-  font-weight: 400;
-  line-height: 1.65;
-  max-width: 52ch;
+	font-family: "Geist", sans-serif;
+	font-size: clamp(0.85rem, 1.2vw, 1rem);
+	font-weight: 400;
+	line-height: 1.65;
+	max-width: 52ch;
 }
 
 /* ── Project grid ───────────────────────────────────────────── */
 
 .Projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.4rem;
 }
 
 @media (max-width: 1024px) {
-  .Projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+	.Projects-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 @media (max-width: 768px) {
-  .Projects {
-    padding: 2.5rem 6% 4rem;
-    gap: 2rem;
-  }
+	.Projects {
+		margin-top: 90px;
+		min-height: calc(100vh - 90px);
+		padding: 2.5rem 6% 4rem;
+		gap: 2rem;
+	}
 
-  .Projects-grid {
-    grid-template-columns: 1fr;
-  }
+	.Projects-grid {
+		grid-template-columns: 1fr;
+	}
 }

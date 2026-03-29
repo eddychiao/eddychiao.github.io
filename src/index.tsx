@@ -23,6 +23,10 @@ const App: React.FC = () => {
     document.body.style.backgroundColor = theme.backgroundColor;
   }, [theme.backgroundColor]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <>
       {location.pathname !== '/' && <Navbar theme={theme} />}

@@ -87,6 +87,16 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ theme }) => {
 				style={{ backgroundColor: theme.buttonColor }}
 			/>
 
+			{project.image && (
+				<div className="ProjectDetail-image-wrap">
+					<img
+						src={project.image}
+						alt={project.title}
+						className="ProjectDetail-image"
+					/>
+				</div>
+			)}
+
 			<div className="ProjectDetail-body" style={{ color: theme.textColor }}>
 				{/* Project content goes here */}
 				<p>{project.fullDescription}</p>

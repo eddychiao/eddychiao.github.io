@@ -70,19 +70,24 @@
 
 @media (max-width: 768px) {
   .Navbar {
-    padding: 0 4%;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 0.5rem 4%;
+    gap: 0.1rem;
   }
 
   .Navbar-brand {
     font-size: 1.2rem;
+    width: 100%;
   }
 
   .Navbar-links {
     gap: 0;
+    flex-wrap: wrap;
   }
 
   .Navbar-link {
-    font-size: 0.62rem;
-    padding: 0.4rem 0.4rem;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.45rem;
   }
 }
