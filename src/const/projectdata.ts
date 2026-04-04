@@ -18,14 +18,14 @@ export const projects: Project[] = [
 		fullDescription:
 			"I'll gladly spend $10 for a chicken bowl, but the same amount to buy eddychiao.com just seems like too big a commitment for now... This is a project long in the making, made possible by a college homework assignment, a lot of googling images, and the genius of Claude Code. Technically a v2, but I made this site for people curious about me to learn more about me and the work I've done!",
 		tags: ["TypeScript", "React"],
-		link: "https://eddychiao.github.io",
+		link: "https://github.com/eddychiao/eddychiao.github.io",
 		image: "/images/projects/portfolio.png",
 	},
 	{
 		id: "wordler",
 		year: "2022",
 		title: "Wordler",
-		shortDescription: "It's ok to get some help",
+		shortDescription: "Wordles can be tough to solve...",
 		fullDescription:
 			"Playing Wordle is just like playing golf: the real game starts when you try to do it in less attempts. After Wordle became all the craze, I became fascinated with the math behind optimizing guesses using information otheory. With the help of 3blue1brown, I coded up an application that suggests the best word to guess next given your previous guesses.",
 		tags: ["Jupyter Notebook", "Python", "React", "Information Theory"],

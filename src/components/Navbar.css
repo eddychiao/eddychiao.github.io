@@ -1,93 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 .Navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  padding: 0 8%;
-  /* no shadow, no border */
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	padding: 0 8%;
+	/* no shadow, no border */
 }
 
 .Navbar-brand {
-  font-family: 'Palatino Linotype', 'Palatino', 'Book Antiqua', Georgia, serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-right: auto;
-  user-select: none;
-  letter-spacing: -0.01em;
+	font-family: "Palatino Linotype", "Palatino", "Book Antiqua", Georgia, serif;
+	font-style: italic;
+	font-weight: 700;
+	font-size: 1.5rem;
+	cursor: pointer;
+	margin-right: auto;
+	user-select: none;
+	letter-spacing: -0.01em;
 }
 
 .Navbar-links {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
 }
 
 .Navbar-link {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-family: 'Geist', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.4rem 0.65rem;
-  display: flex;
-  align-items: center;
-  opacity: 0.45;
-  transition: opacity 0.15s ease;
-  user-select: none;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	font-family: "Geist", sans-serif;
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	padding: 0.4rem 0.65rem;
+	display: flex;
+	align-items: center;
+	opacity: 0.45;
+	transition: opacity 0.15s ease;
+	user-select: none;
 }
 
 .Navbar-link:hover {
-  opacity: 0.85;
+	opacity: 0.85;
 }
 
 .Navbar-link.active {
-  opacity: 1;
-  position: relative;
+	opacity: 1;
+	position: relative;
 }
 
 .Navbar-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0.65rem;
-  right: 0.65rem;
-  height: 1.5px;
-  background: currentColor;
-  border-radius: 1px;
-  opacity: 0.5;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0.65rem;
+	right: 0.65rem;
+	height: 1.5px;
+	background: currentColor;
+	border-radius: 1px;
+	opacity: 0.5;
 }
 
 @media (max-width: 768px) {
-  .Navbar {
-    height: auto;
-    flex-wrap: wrap;
-    padding: 0.5rem 4%;
-    gap: 0.1rem;
-  }
+	.Navbar {
+		height: auto;
+		flex-wrap: wrap;
+		padding: 0.5rem 4%;
+		gap: 0.1rem;
+	}
 
-  .Navbar-brand {
-    font-size: 1.2rem;
-    width: 100%;
-  }
+	.Navbar-brand {
+		font-size: 1.2rem;
+		width: 100%;
+	}
 
-  .Navbar-links {
-    gap: 0;
-    flex-wrap: wrap;
-  }
+	.Navbar-links {
+		gap: 0;
+		flex-wrap: wrap;
+	}
 
-  .Navbar-link {
-    font-size: 0.65rem;
-    padding: 0.3rem 0.45rem;
-  }
+	.Navbar-link {
+		font-size: 0.65rem;
+		padding: 0.3rem 0.45rem;
+	}
 }

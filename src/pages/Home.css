@@ -1,204 +1,216 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 .Home {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 0 8%;
-  gap: 4vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	padding: 0 8%;
+	gap: 4vw;
 }
 
 .Home-left {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .Home-right {
-  flex: 0 0 24vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	flex: 0 0 24vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .Home-title {
-  font-family: 'Geist', sans-serif;
-  font-size: clamp(1.6rem, 4.6vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  text-align: left;
-  margin-bottom: 1.2rem;
-  line-height: 1.1;
+	font-family: "Geist", sans-serif;
+	font-size: clamp(1.6rem, 4.6vw, 3.5rem);
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	text-align: left;
+	margin-bottom: 1.2rem;
+	line-height: 1.1;
 }
 
 .Home-divider {
-  width: 2.5rem;
-  height: 3px;
-  border-radius: 2px;
-  margin-bottom: 1.2rem;
-  opacity: 0.7;
+	width: 2.5rem;
+	height: 3px;
+	border-radius: 2px;
+	margin-bottom: 1.2rem;
+	opacity: 0.7;
 }
 
 .Home-description {
-  font-family: 'Geist', sans-serif;
-  font-weight: 500;
-  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
-  line-height: 1.7;
-  letter-spacing: 0.01em;
-  text-align: left;
-  max-width: 38ch;
-  opacity: 0.85;
+	font-family: "Geist", sans-serif;
+	font-weight: 500;
+	font-size: clamp(1.2rem, 1.4vw, 1.05rem);
+	line-height: 1.7;
+	letter-spacing: 0.01em;
+	text-align: left;
+	max-width: 38ch;
+	opacity: 0.85;
 }
 
 .Home-nav-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  margin-top: 2rem;
-  list-style: none;
-  padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+	margin-top: 2rem;
+	list-style: none;
+	padding: 0;
 }
 
 .Home-nav-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.4rem 0;
-  width: fit-content;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-  opacity: 0.7;
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	padding: 0.4rem 0;
+	width: fit-content;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+	transition:
+		transform 0.15s ease,
+		opacity 0.15s ease;
+	opacity: 0.7;
 }
 
 .Home-nav-item:hover {
-  opacity: 1;
-  transform: translateX(6px);
+	opacity: 1;
+	transform: translateX(6px);
 }
 
 .Home-nav-icon {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
 }
 
 .Home-nav-label {
-  font-family: 'Geist', sans-serif;
-  font-size: clamp(0.65rem, 1vw, 0.8rem);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+	font-family: "Geist", sans-serif;
+	font-size: clamp(0.95rem, 1vw, 0.8rem);
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
 }
 
 .Home-nav-external {
-  display: flex;
-  align-items: center;
-  margin-left: 0.15rem;
-  opacity: 0.7;
+	display: flex;
+	align-items: center;
+	margin-left: 0.15rem;
+	opacity: 0.7;
 }
 
 .Home-ghost {
-  opacity: 0;
-  user-select: none;
-  pointer-events: none;
-  display: block;
+	opacity: 0;
+	user-select: none;
+	pointer-events: none;
+	display: block;
 }
 
 .Home-typed {
-  position: absolute;
-  top: 0;
-  left: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .Home-cursor {
-  display: inline-block;
-  font-weight: 300;
-  animation: blink 0.55s step-start infinite;
-  margin-left: 1px;
+	display: inline-block;
+	font-weight: 300;
+	animation: blink 0.55s step-start infinite;
+	margin-left: 1px;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }
 
 @media (max-width: 768px) {
-  .Home {
-    flex-direction: column;
-    padding: 2.5rem 6%;
-    gap: 2.5rem;
-    align-items: center;
-  }
+	.Home {
+		flex-direction: column;
+		padding: 2.5rem 6%;
+		gap: 2.5rem;
+		align-items: center;
+	}
 
-  .Home-left {
-    align-items: flex-start;
-    width: 100%;
-  }
+	.Home-left {
+		align-items: flex-start;
+		width: 100%;
+	}
 
-  .Home-right {
-    flex: 0 0 auto;
-    width: 60vw;
-    max-width: 260px;
-  }
+	.Home-right {
+		flex: 0 0 auto;
+		width: 60vw;
+		max-width: 260px;
+	}
 
-  .Home-title {
-    font-size: 2.4rem;
-  }
+	.Home-title {
+		font-size: 2.4rem;
+	}
 
-  .Home-description {
-    font-size: 0.95rem;
-    max-width: 100%;
-  }
+	.Home-description {
+		font-size: 0.95rem;
+		max-width: 100%;
+	}
 
-  .Home-nav-label {
-    font-size: 0.75rem;
-  }
+	.Home-nav-label {
+		font-size: 0.75rem;
+	}
 }
 
 .Home-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	display: block;
 }
 
 /* --- Tilt interaction --- */
 
 .tilt-wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: default;
-  user-select: none;
-  -webkit-user-select: none;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: default;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 .tilt-float {
-  animation: float 5s ease-in-out infinite;
-  will-change: transform;
+	animation: float 5s ease-in-out infinite;
+	will-change: transform;
 }
 
 .tilt-card {
-  position: relative;
-  will-change: transform;
+	position: relative;
+	will-change: transform;
 }
 
 .tilt-shine {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1;
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+	z-index: 1;
 }
 
 @keyframes float {
-  0%,  100% { transform: translateY(0px); }
-  50%        { transform: translateY(-14px); }
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-14px);
+	}
 }
