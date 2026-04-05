@@ -27,10 +27,10 @@ export const projects: Project[] = [
 		title: "Wordler",
 		shortDescription: "Wordles can be tough to solve...",
 		fullDescription:
-			"Playing Wordle is just like playing golf: the real game starts when you try to do it in less attempts. After Wordle became all the craze, I became fascinated with the math behind optimizing guesses using information otheory. With the help of 3blue1brown, I coded up an application that suggests the best word to guess next given your previous guesses.",
+			"Playing Wordle is just like playing golf: the real game starts when you try to do it in less attempts. After Wordle became all the craze, I became fascinated with the math behind optimizing guesses using information theory. With the help of 3blue1brown, I coded up an application that suggests the best word to guess next given your previous guesses.",
 		tags: ["Jupyter Notebook", "Python", "React", "Information Theory"],
-		link: "https://github.com/eddychiao",
-		image: "/images/projects/peekaboo.png",
+		link: "https://github.com/eddychiao/Wordler",
+		image: "/images/projects/wordler.png",
 	},
 	{
 		id: "peekaboo",
@@ -43,15 +43,15 @@ export const projects: Project[] = [
 		link: "https://github.com/eddychiao",
 		image: "/images/projects/peekaboo.png",
 	},
-	{
-		id: "project-placeholder-4",
-		year: "2018",
-		title: "Project Title",
-		shortDescription: "Placeholder text",
-		fullDescription:
-			"Short description of what this project does and why it was built. Replace with real content.",
-		tags: ["Java", "PostgreSQL", "Docker"],
-		link: "https://github.com/eddychiao",
-		image: "/images/projects/placeholder.png",
-	},
+	// {
+	// 	id: "project-placeholder-4",
+	// 	year: "2018",
+	// 	title: "Project Title",
+	// 	shortDescription: "Placeholder text",
+	// 	fullDescription:
+	// 		"Short description of what this project does and why it was built. Replace with real content.",
+	// 	tags: ["Java", "PostgreSQL", "Docker"],
+	// 	link: "https://github.com/eddychiao",
+	// 	image: "/images/projects/placeholder.png",
+	// },
 ];
