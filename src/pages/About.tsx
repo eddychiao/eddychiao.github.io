@@ -43,20 +43,18 @@ const About: React.FC<AboutProps> = ({ theme }) => {
 						and am now currently living in New York City.
 						<br />
 						<br />
-						I graduated with B.S. and M.S. degrees in Computer Science (and an
-						unfinished linguistics minor) from Georgia Tech, with concentrations
-						in artificial intelligence and human-centered computing. I've worked
-						as a software engineer since 2021, starting off at Microsoft. During
-						my time in college I did internships at companies like Capital One
-						and American Express. When I was younger I had a huge obsession with
-						building things with Legos, and I feel like coding gives me the same
-						freedom to make almost anything.
+						I graduated with B.S. and M.S. degrees in Computer Science (and a
+						linguistics minor) from Georgia Tech, with concentrations in
+						artificial intelligence and human-centered computing. I've worked as
+						a software engineer since 2021, starting at Microsoft. In college, I
+						did internships at companies like Capital One and American Express.
+						When I was younger I had a huge obsession with building things with
+						Legos, and I feel like coding gives me the same freedom to make
+						almost anything.
 						<br />
 						<br />
 						Outside of coding — I enjoy taking photos, playing piano/guitar, and
-						playing different sports like volleyball, spikeball, tennis (if the
-						weather permits). I also enjoy playing video games and reading a
-						book from time to time (if you have any recs please let me know)!
+						reaeding a book from time to time (happily taking recs)!
 					</div>
 				</div>
 				<div className="About-hero-right">

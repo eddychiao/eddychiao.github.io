@@ -40,7 +40,7 @@ export const projects: Project[] = [
 		fullDescription:
 			"Project that a few friends and I made at HackGT. React Native application that scrapes recorded jumpscare timestamps from a horror movie database, then sends a notification to the user slightly ahead of time to warn them of what's coming. Jumpscare coming in 3... 2... 1...",
 		tags: ["React", "PyTorch", "Flask", "Webscraping"],
-		link: "https://github.com/eddychiao",
+		link: "https://github.com/jeremy-zou/Peek-A-Boo",
 		image: "/images/projects/peekaboo.png",
 	},
 	// {
