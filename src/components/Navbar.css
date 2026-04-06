@@ -49,6 +49,7 @@
 
 .Navbar-link:hover {
 	opacity: 0.85;
+	transform: translateY(2px);
 }
 
 .Navbar-link.active {

@@ -80,7 +80,7 @@
 
 .Home-nav-item:hover {
 	opacity: 1;
-	transform: translateX(6px);
+	transform: translateX(16px);
 }
 
 .Home-nav-icon {

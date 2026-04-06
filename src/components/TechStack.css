@@ -1,57 +1,57 @@
 .TechStack {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
 }
 
 .TechStack-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
 }
 
 .TechStack-group-label {
-  font-family: 'Geist', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.45;
+	font-family: "Geist", sans-serif;
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	opacity: 0.45;
 }
 
 .TechStack-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
 }
 
 .TechStack-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.85rem;
-  border-radius: 6px;
-  border: 1px solid currentColor;
-  transition: transform 0.15s ease;
-  cursor: default;
-  user-select: none;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.45rem 0.85rem;
+	border-radius: 6px;
+	border: 1px solid currentColor;
+	transition: transform 0.15s ease;
+	cursor: default;
+	user-select: none;
 }
 
 .TechStack-item:hover {
-  transform: translateY(-2px);
+	transform: translateY(-5px);
 }
 
 .TechStack-icon {
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-  flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	font-size: 1.1rem;
+	flex-shrink: 0;
 }
 
 .TechStack-label {
-  font-family: 'Geist', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+	font-family: "Geist", sans-serif;
+	font-size: 0.78rem;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	white-space: nowrap;
 }

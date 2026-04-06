@@ -54,10 +54,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 	const navigate = useNavigate();
 
 	// --- Typing animation ---
-	const { typed: titleText, done: titleDone } = useTypingAnimation(TITLE, 75);
+	const { typed: titleText, done: titleDone } = useTypingAnimation(TITLE, 50);
 	const { typed: descText, done: descDone } = useTypingAnimation(
 		DESC,
-		15,
+		10,
 		titleDone ? 320 : 999999,
 	);
 
