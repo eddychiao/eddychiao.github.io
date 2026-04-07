@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./About.css";
 import TechStack from "../components/TechStack";
 import TimelineAbout from "../components/TimelineAbout";
@@ -11,8 +11,20 @@ interface AboutProps {
 
 const TITLE = "About Me";
 
+// Add new effects here — each is a CSS transform string
+const IMAGE_EFFECTS: string[] = [
+	"scaleX(-1)", // flip horizontal
+	"scaleY(-1)", // flip vertical
+];
+
 const About: React.FC<AboutProps> = ({ theme }) => {
 	const { typed, done } = useTypingAnimation(TITLE, 75);
+	const [imageTransform, setImageTransform] = useState("none");
+
+	const handleImageClick = () => {
+		const effect = IMAGE_EFFECTS[Math.floor(Math.random() * IMAGE_EFFECTS.length)];
+		setImageTransform((prev) => (prev === effect ? "none" : effect));
+	};
 
 	return (
 		<div className="About" style={{ backgroundColor: theme.backgroundColor }}>
@@ -54,7 +66,7 @@ const About: React.FC<AboutProps> = ({ theme }) => {
 						<br />
 						<br />
 						Outside of coding — I enjoy taking photos, playing piano/guitar, and
-						reaeding a book from time to time (happily taking recs)!
+						reading a book from time to time (happily taking recs)!
 					</div>
 				</div>
 				<div className="About-hero-right">
@@ -62,7 +74,8 @@ const About: React.FC<AboutProps> = ({ theme }) => {
 						src="/images/fb_pic.jpg"
 						alt="Eddy Chiao"
 						className="About-image"
-						style={{ pointerEvents: "none" }}
+						style={{ transform: imageTransform, cursor: "pointer" }}
+						onClick={handleImageClick}
 					/>
 				</div>
 			</div>
