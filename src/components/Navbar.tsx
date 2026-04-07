@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import NorthEastRoundedIcon from "@mui/icons-material/NorthEastRounded";
 import "./Navbar.css";
@@ -28,6 +28,32 @@ const navLinks = [
 const Navbar: React.FC<NavbarProps> = ({ theme }) => {
 	const navigate = useNavigate();
 	const location = useLocation();
+	const [colorIndex, setColorIndex] = useState(0);
+	const indexRef = useRef(0);
+	const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+	const handleBrandMouseEnter = () => {
+		indexRef.current = 1;
+		setColorIndex(1);
+		intervalRef.current = setInterval(() => {
+			indexRef.current = (indexRef.current + 1) % 3;
+			setColorIndex(indexRef.current);
+		}, 1800);
+	};
+
+	const handleBrandMouseLeave = () => {
+		if (intervalRef.current) {
+			clearInterval(intervalRef.current);
+			intervalRef.current = null;
+		}
+		indexRef.current = 0;
+		setColorIndex(0);
+	};
+
+	useEffect(() => {
+		indexRef.current = 0;
+		setColorIndex(0);
+	}, [theme]);
 
 	const handleClick = (link: (typeof navLinks)[0]) => {
 		if (link.external) {
@@ -44,8 +70,14 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
 		<nav className="Navbar" style={{ backgroundColor: theme.backgroundColor }}>
 			<span
 				className="Navbar-brand"
-				style={{ color: theme.headerColor }}
-				onClick={() => navigate("/")}>
+				style={{
+					color: [theme.headerColor, theme.textColor, theme.buttonColor][
+						colorIndex
+					],
+				}}
+				onClick={() => navigate("/")}
+				onMouseEnter={handleBrandMouseEnter}
+				onMouseLeave={handleBrandMouseLeave}>
 				etc.
 			</span>
 

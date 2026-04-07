@@ -17,7 +17,7 @@ export const projects: Project[] = [
 		shortDescription: "Yer lookin' right at it!",
 		fullDescription:
 			"I'll gladly spend $10 for a chicken bowl, but the same amount to buy eddychiao.com just seems like too big a commitment for now... This is a project long in the making, made possible by a college homework assignment, a lot of googling images, and the genius of Claude Code. Technically a v2, but I made this site for people curious about me to learn more about me and the work I've done!",
-		tags: ["TypeScript", "React"],
+		tags: ["TypeScript", "React", "CSS", "Next.js"],
 		link: "https://github.com/eddychiao/eddychiao.github.io",
 		image: "/images/projects/portfolio.png",
 	},
