@@ -1,7 +1,17 @@
+.Timeline-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 1.5rem;
+	width: 100%;
+	position: relative;
+}
+
 .Timeline {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	flex: 0 0 550px;
+	min-width: 0;
 }
 
 .Timeline-row {
@@ -18,7 +28,7 @@
 	font-weight: 600;
 	letter-spacing: 0.06em;
 	text-align: right;
-	padding-top: 0.2rem;
+	padding-top: 0.55rem;
 }
 
 /* Dot + connecting line */
@@ -33,7 +43,7 @@
 	height: 9px;
 	border-radius: 50%;
 	flex-shrink: 0;
-	margin-top: 0.3rem;
+	margin-top: 0.6rem;
 }
 
 .Timeline-line {
@@ -44,9 +54,26 @@
 	margin-top: 4px;
 }
 
+/* ── Card ────────────────────────────────────────────────────────────── */
+.Timeline-card {
+	border: 1.5px solid transparent;
+	border-radius: 10px;
+	padding: 0.55rem 0.75rem;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease,
+		box-shadow 0.2s ease;
+}
+
+.Timeline-card:hover {
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
 /* Content */
 .Timeline-body {
-	padding-bottom: 1.8rem;
+	/* no padding-bottom here anymore — card handles spacing */
 }
 
 .Timeline-title {
@@ -83,7 +110,126 @@
 	margin-top: 0.45rem;
 }
 
+/* ── Detail panel ────────────────────────────────────────────────────── */
+.Timeline-detail {
+	flex: 0 0 500px;
+	border: 1.5px solid transparent;
+	border-radius: 12px;
+	padding: 1.25rem 1.2rem;
+	max-height: 70vh;
+	overflow-y: auto;
+	opacity: 0;
+	transform: translateX(12px);
+	pointer-events: none;
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.Timeline-detail--open {
+	opacity: 1;
+	transform: translateX(0);
+	pointer-events: auto;
+}
+
+.Timeline-detail-close {
+	position: absolute;
+	top: 0.7rem;
+	right: 0.7rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0.2rem;
+	display: flex;
+	align-items: center;
+	opacity: 0.5;
+	transition: opacity 0.15s ease;
+}
+
+.Timeline-detail-close:hover {
+	opacity: 1;
+}
+
+.Timeline-detail-header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding-right: 1.5rem;
+}
+
+.Timeline-detail-logo {
+	height: 1.6em;
+	width: auto;
+	margin-bottom: 0.3rem;
+}
+
+.Timeline-detail-title {
+	font-family: "Geist", sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	line-height: 1.25;
+}
+
+.Timeline-detail-subtitle {
+	font-family: "Geist", sans-serif;
+	font-size: 0.88rem;
+	font-weight: 400;
+	opacity: 0.85;
+	line-height: 1.4;
+}
+
+.Timeline-detail-year {
+	font-family: "Geist", sans-serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	margin-top: 0.1rem;
+}
+
+.Timeline-detail-divider {
+	height: 1.5px;
+	border-radius: 2px;
+	margin: 0.85rem 0;
+}
+
+.Timeline-detail-list {
+	margin: 0;
+	padding-left: 1rem;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.Timeline-detail-text {
+	font-family: "Geist", sans-serif;
+	font-size: 0.88rem;
+	line-height: 1.4;
+	opacity: 0.85;
+	position: relative;
+	padding-left: 0.85rem;
+}
+
+.Timeline-detail-text::before {
+	content: "-";
+	position: absolute;
+	left: 0;
+	opacity: 0.6;
+}
+
+/* backdrop — hidden on desktop */
+.Timeline-backdrop {
+	display: none;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
+	.Timeline-container {
+		flex-direction: column;
+	}
+
 	.Timeline-row {
 		grid-template-columns: 3rem 1.5rem 1fr;
 		gap: 0 0.7rem;
@@ -99,5 +245,39 @@
 
 	.Timeline-subtitle {
 		font-size: 0.82rem;
+	}
+
+	/* On mobile the panel is a bottom sheet */
+	.Timeline-detail {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		flex: unset;
+		border-radius: 16px 16px 0 0;
+		max-height: 55vh;
+		z-index: 500;
+		transform: translateY(100%);
+		transition:
+			opacity 0.25s ease,
+			transform 0.3s ease;
+		opacity: 0;
+		pointer-events: none;
+		box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.15);
+	}
+
+	.Timeline-detail--open {
+		transform: translateY(0);
+		pointer-events: auto;
+		opacity: 1;
+	}
+
+	.Timeline-backdrop {
+		display: block;
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.3);
+		z-index: 499;
+		backdrop-filter: blur(2px);
 	}
 }

@@ -1,18 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TimelineAbout.css";
 import { Theme } from "../context/ThemeContext";
 import TagPill from "./TagPill";
-
-type EntryType = "education" | "professional experience" | "internship";
-
-interface TimelineEntry {
-	year: string;
-	title: string;
-	subtitle: string;
-	type: EntryType;
-	logo?: string;
-	logoHeight?: string;
-}
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import { entries } from "../const/timelinedata";
 
 const yearsInRole = (year: string): string | null => {
 	const [start, end] = year.split("-").map(Number);
@@ -20,108 +11,172 @@ const yearsInRole = (year: string): string | null => {
 	return String(end - start);
 };
 
-// ── Add / remove entries here ──────────────────────────────────────────────
-const entries: TimelineEntry[] = [
-	{
-		year: "2021-2025",
-		title: "Microsoft",
-		subtitle: "Software Engineer I → II",
-		type: "professional experience",
-		logo: "/images/microsoft-icon.svg",
-	},
-	{
-		year: "2020-2021",
-		title: "Georgia Institute of Technology",
-		subtitle: "M.S. in Computer Science (Artificial Intelligence)",
-		type: "education",
-		logo: "/images/gt_logo.svg",
-	},
-	{
-		year: "2020",
-		title: "American Express",
-		subtitle: "Software Engineer Intern",
-		type: "internship",
-		logo: "/images/amex_logo.svg",
-		logoHeight: "1.5em",
-	},
-	{
-		year: "2019",
-		title: "Capital One",
-		subtitle: "Software Engineer Intern",
-		type: "internship",
-		logo: "/images/capital_one_logo.svg",
-	},
-	{
-		year: "2018",
-		title: "CodeMettle",
-		subtitle: "Software Engineer Intern",
-		type: "internship",
-		logo: "/images/codemettle_logo.svg",
-	},
-	{
-		year: "2016-2020",
-		title: "Georgia Institute of Technology",
-		subtitle: "B.S. in Computer Science",
-		type: "education",
-		logo: "/images/gt_logo.svg",
-	},
-];
 // ────────────────────────────────────────────────────────────────────────────
 
-const TimelineAbout: React.FC<{ theme: Theme }> = ({ theme }) => (
-	<div className="Timeline">
-		{entries.map((entry, i) => (
-			<div className="Timeline-row" key={i}>
-				<div className="Timeline-year" style={{ color: theme.headerColor }}>
-					{entry.year}
-				</div>
+const TRANSITION_MS = 260;
 
-				<div className="Timeline-spine">
-					<div
-						className="Timeline-dot"
-						style={{ backgroundColor: theme.buttonColor }}
-					/>
-					{i < entries.length - 1 && (
-						<div
-							className="Timeline-line"
-							style={{ backgroundColor: theme.buttonColor }}
-						/>
-					)}
-				</div>
+const TimelineAbout: React.FC<{ theme: Theme }> = ({ theme }) => {
+	const [selected, setSelected] = useState<number | null>(null);
+	const [isOpen, setIsOpen] = useState(false);
+	const [displayedEntry, setDisplayedEntry] = useState<typeof entries[0] | null>(null);
+	const closeTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
-				<div className="Timeline-body" style={{ color: theme.textColor }}>
-					<div className="Timeline-title">
-						{entry.logo && (
-							<img
-								src={entry.logo}
-								alt={entry.title}
-								className="Timeline-logo"
-								style={
-									entry.logoHeight ? { height: entry.logoHeight } : undefined
-								}
+	const openPanel = (i: number) => {
+		if (closeTimer.current) clearTimeout(closeTimer.current);
+		setSelected(i);
+		setDisplayedEntry(entries[i]);
+		setIsOpen(true);
+	};
+
+	const closePanel = () => {
+		setIsOpen(false);
+		setSelected(null);
+		closeTimer.current = setTimeout(() => setDisplayedEntry(null), TRANSITION_MS);
+	};
+
+	const handleCardClick = (i: number) => {
+		if (selected === i) {
+			closePanel();
+		} else {
+			openPanel(i);
+		}
+	};
+
+	return (
+		<div className="Timeline-container">
+			{/* ── Timeline list ── */}
+			<div className="Timeline">
+				{entries.map((entry, i) => (
+					<div className="Timeline-row" key={i}>
+						<div className="Timeline-year" style={{ color: theme.headerColor }}>
+							{entry.year}
+						</div>
+
+						<div className="Timeline-spine">
+							<div
+								className="Timeline-dot"
+								style={{ backgroundColor: theme.buttonColor }}
 							/>
-						)}
-						{entry.title}
-					</div>
-					<div
-						className="Timeline-subtitle"
-						style={{ color: theme.headerColor }}>
-						{entry.subtitle}
-					</div>
-					<div className="Timeline-tags">
-						<TagPill label={entry.type} color={theme.buttonColor} />
-						{entry.type === "professional experience" &&
-							yearsInRole(entry.year) && (
-								<TagPill
-									label={`${yearsInRole(entry.year)} years`}
-									color={theme.headerColor}
+							{i < entries.length - 1 && (
+								<div
+									className="Timeline-line"
+									style={{ backgroundColor: theme.buttonColor }}
 								/>
 							)}
+						</div>
+						<div
+							className={`Timeline-card${selected === i ? " Timeline-card--active" : ""}`}
+							style={{
+								borderColor: selected === i ? theme.buttonColor : "transparent",
+								backgroundColor:
+									selected === i ? `${theme.buttonColor}14` : "transparent",
+							}}
+							onClick={() => handleCardClick(i)}>
+							<div className="Timeline-body" style={{ color: theme.textColor }}>
+								<div className="Timeline-title">
+									{entry.logo && (
+										<img
+											src={entry.logo}
+											alt={entry.title}
+											className="Timeline-logo"
+											style={
+												entry.logoHeight
+													? { height: entry.logoHeight }
+													: undefined
+											}
+										/>
+									)}
+									{entry.title}
+								</div>
+								<div
+									className="Timeline-subtitle"
+									style={{ color: theme.headerColor }}>
+									{entry.subtitle}
+								</div>
+								<div className="Timeline-tags">
+									<TagPill label={entry.type} color={theme.buttonColor} />
+									{entry.type === "professional experience" &&
+										yearsInRole(entry.year) && (
+											<TagPill
+												label={`${yearsInRole(entry.year)} years`}
+												color={theme.headerColor}
+											/>
+										)}
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
+				))}
 			</div>
-		))}
-	</div>
-);
+
+			{/* ── Detail panel ── */}
+			<div
+				className={`Timeline-detail${isOpen ? " Timeline-detail--open" : ""}`}
+				style={{
+					borderColor: theme.buttonColor + "40",
+					backgroundColor: theme.backgroundColor,
+					color: theme.textColor,
+				}}>
+				{displayedEntry && (
+					<>
+						<button
+							className="Timeline-detail-close"
+							onClick={closePanel}
+							style={{ color: theme.textColor }}
+							aria-label="Close">
+							<CloseRoundedIcon sx={{ fontSize: "1.1rem" }} />
+						</button>
+
+						<div className="Timeline-detail-header">
+							{displayedEntry.logo && (
+								<img
+									src={displayedEntry.logo}
+									alt={displayedEntry.title}
+									className="Timeline-detail-logo"
+									style={
+										displayedEntry.logoHeight
+											? { height: displayedEntry.logoHeight }
+											: undefined
+									}
+								/>
+							)}
+							<div
+								className="Timeline-detail-title"
+								style={{ color: theme.headerColor }}>
+								{displayedEntry.title}
+							</div>
+							<div className="Timeline-detail-subtitle">
+								{displayedEntry.subtitle}
+							</div>
+							<div
+								className="Timeline-detail-year"
+								style={{ color: theme.buttonColor }}>
+								{displayedEntry.year}
+							</div>
+						</div>
+
+						<div
+							className="Timeline-detail-divider"
+							style={{ backgroundColor: theme.buttonColor + "50" }}
+						/>
+
+						<ul className="Timeline-detail-list">
+							{displayedEntry.details.map((point, i) => (
+								<li key={i} className="Timeline-detail-text">
+									{point}
+								</li>
+							))}
+						</ul>
+					</>
+				)}
+			</div>
+
+			{/* ── Mobile overlay backdrop ── */}
+			{displayedEntry && (
+				<div className="Timeline-backdrop" onClick={closePanel} />
+			)}
+		</div>
+	);
+};
 
 export default TimelineAbout;
