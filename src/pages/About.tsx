@@ -22,7 +22,8 @@ const About: React.FC<AboutProps> = ({ theme }) => {
 	const [imageTransform, setImageTransform] = useState("none");
 
 	const handleImageClick = () => {
-		const effect = IMAGE_EFFECTS[Math.floor(Math.random() * IMAGE_EFFECTS.length)];
+		const effect =
+			IMAGE_EFFECTS[Math.floor(Math.random() * IMAGE_EFFECTS.length)];
 		setImageTransform((prev) => (prev === effect ? "none" : effect));
 	};
 
@@ -55,14 +56,13 @@ const About: React.FC<AboutProps> = ({ theme }) => {
 						and am now currently living in New York City.
 						<br />
 						<br />
-						I graduated with B.S. and M.S. degrees in Computer Science (and a
-						linguistics minor) from Georgia Tech, with concentrations in
-						artificial intelligence and human-centered computing. I've worked as
-						a software engineer since 2021, starting at Microsoft. In college, I
-						did internships at companies like Capital One and American Express.
-						When I was younger I had a huge obsession with building things with
-						Legos, and I feel like coding gives me the same freedom to make
-						almost anything.
+						I graduated with B.S. and M.S. degrees in Computer Science from
+						Georgia Tech, with concentrations in artificial intelligence and
+						human-centered computing. I've worked as a software engineer since
+						2021, starting at Microsoft. In college, I did internships at
+						companies like Capital One and American Express. When I was younger
+						I had a huge obsession with building things with Legos, and I feel
+						like coding gives me the same freedom to make almost anything.
 						<br />
 						<br />
 						Outside of coding — I enjoy taking photos, playing piano/guitar, and
