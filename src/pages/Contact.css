@@ -1,149 +1,156 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 .Contact {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 8%;
-  gap: 8vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	padding: 0 8%;
+	gap: 4vw;
 }
 
 .Contact-left {
-  flex: 0 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	flex: 0 1 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .Contact-right {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .Contact-ghost {
-  opacity: 0;
-  user-select: none;
-  pointer-events: none;
-  display: block;
+	opacity: 0;
+	user-select: none;
+	pointer-events: none;
+	display: block;
 }
 
 .Contact-typed {
-  position: absolute;
-  top: 0;
-  left: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .Contact-cursor {
-  display: inline-block;
-  font-weight: 300;
-  animation: blink 0.55s step-start infinite;
-  margin-left: 1px;
+	display: inline-block;
+	font-weight: 300;
+	animation: blink 0.55s step-start infinite;
+	margin-left: 1px;
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }
 
 .Contact-header {
-  font-family: 'Geist', sans-serif;
-  font-size: clamp(1.6rem, 4.6vw, 3.5rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  text-align: left;
-  white-space: nowrap;
-  margin-bottom: 1.2rem;
+	font-family: "Geist", sans-serif;
+	font-size: clamp(1.6rem, 4.6vw, 3.5rem);
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+	text-align: left;
+	white-space: nowrap;
+	margin-bottom: 1.2rem;
 }
 
 .Contact-divider {
-  width: 2.5rem;
-  height: 3px;
-  border-radius: 2px;
-  margin-bottom: 1.2rem;
-  opacity: 0.7;
+	width: 2.5rem;
+	height: 3px;
+	border-radius: 2px;
+	margin-bottom: 1.2rem;
+	opacity: 0.7;
 }
 
 .Contact-description {
-  font-family: 'Geist', sans-serif;
-  font-weight: 500;
-  font-size: clamp(0.85rem, 1.4vw, 1.05rem);
-  text-align: left;
-  opacity: 0.85;
+	font-family: "Geist", sans-serif;
+	font-weight: 500;
+	font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+	text-align: left;
+	opacity: 0.85;
 }
 
 .Contact-nav-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 .Contact-nav-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.4rem 0;
-  width: fit-content;
-  background: transparent;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease;
-  opacity: 0.7;
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	padding: 0.4rem 0;
+	width: fit-content;
+	background: transparent;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	transition:
+		transform 0.15s ease,
+		opacity 0.15s ease;
+	opacity: 0.7;
 }
 
 .Contact-nav-item:hover {
-  opacity: 1;
-  transform: translateX(6px);
+	opacity: 1;
+	transform: translateX(16px);
 }
 
 .Contact-nav-icon {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
 }
 
 .Contact-nav-label {
-  font-family: 'Geist', sans-serif;
-  font-size: clamp(0.65rem, 1vw, 0.8rem);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+	font-family: "Geist", sans-serif;
+	font-size: clamp(0.65rem, 1vw, 0.8rem);
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
 }
 
 .Contact-nav-external {
-  display: flex;
-  align-items: center;
-  margin-left: 0.15rem;
-  opacity: 0.7;
+	display: flex;
+	align-items: center;
+	margin-left: 0.15rem;
+	opacity: 0.7;
 }
 
 @media (max-width: 768px) {
-  .Contact {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 0 6%;
-    gap: 2rem;
-  }
+	.Contact {
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		padding: 0 6%;
+		gap: 2rem;
+	}
 
-  .Contact-header {
-    font-size: 2.2rem;
-    white-space: normal;
-  }
+	.Contact-header {
+		font-size: 2.2rem;
+		white-space: normal;
+	}
 
-  .Contact-description {
-    font-size: 0.95rem;
-  }
+	.Contact-description {
+		font-size: 0.95rem;
+	}
 
-  .Contact-nav-label {
-    font-size: 0.85rem;
-  }
+	.Contact-nav-label {
+		font-size: 0.85rem;
+	}
 }
