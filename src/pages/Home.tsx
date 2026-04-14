@@ -64,7 +64,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 	const darkBackgrounds = [
 		constants.colors.katana.backgroundColor,
 		constants.colors.dusk.backgroundColor,
-		constants.colors.falcon.backgroundColor,
+		constants.colors.falcons.backgroundColor,
 	];
 	const isDarkTheme = darkBackgrounds.includes(theme.backgroundColor);
 

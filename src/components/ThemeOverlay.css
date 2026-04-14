@@ -10,12 +10,13 @@
 /* shared swatch base */
 .toggle-option-braves-button,
 .toggle-option-dusk-button,
-.toggle-option-falcon-button,
+.toggle-option-falcons-button,
 .toggle-option-katana-button,
 .toggle-option-knicks-button,
 .toggle-option-matcha-button,
 .toggle-option-mist-button,
-.toggle-option-sakura-button {
+.toggle-option-sakura-button,
+.toggle-option-spartans-button {
     width: clamp(1rem, 1.375rem, 1.75rem) !important;
     height: clamp(1rem, 1.375rem, 1.75rem) !important;
     min-width: clamp(1rem, 1.375rem, 1.75rem) !important;
@@ -57,12 +58,13 @@
 
 .toggle-option-braves-button:hover,
 .toggle-option-dusk-button:hover,
-.toggle-option-falcon-button:hover,
+.toggle-option-falcons-button:hover,
 .toggle-option-katana-button:hover,
 .toggle-option-knicks-button:hover,
 .toggle-option-matcha-button:hover,
 .toggle-option-mist-button:hover,
-.toggle-option-sakura-button:hover {
+.toggle-option-sakura-button:hover,
+.toggle-option-spartans-button:hover {
     opacity: 1;
     transform: scale(1.28) translateX(-4px);
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
@@ -70,12 +72,13 @@
 
 .toggle-option-braves-button.Mui-selected,
 .toggle-option-dusk-button.Mui-selected,
-.toggle-option-falcon-button.Mui-selected,
+.toggle-option-falcons-button.Mui-selected,
 .toggle-option-katana-button.Mui-selected,
 .toggle-option-knicks-button.Mui-selected,
 .toggle-option-matcha-button.Mui-selected,
 .toggle-option-mist-button.Mui-selected,
-.toggle-option-sakura-button.Mui-selected {
+.toggle-option-sakura-button.Mui-selected,
+.toggle-option-spartans-button.Mui-selected {
     opacity: 1;
     transform: scale(1.18);
     border: 1.5px solid white !important;
@@ -85,12 +88,13 @@
 /* gradients */
 .toggle-option-braves-button    { background: linear-gradient(155deg, #1A52C8 45%, #B80320 55%); }
 .toggle-option-dusk-button      { background: linear-gradient(155deg, #1C1624 45%, #7C5CBF 55%); }
-.toggle-option-falcon-button    { background: linear-gradient(155deg, #0D1018 45%, #C42828 55%); }
+.toggle-option-falcons-button   { background: linear-gradient(155deg, #0D1018 45%, #C42828 55%); }
 .toggle-option-katana-button    { background: linear-gradient(155deg, #000000 45%, #A799B7 55%); }
 .toggle-option-knicks-button    { background: linear-gradient(155deg, #0F5FA8 45%, #EF7B2E 55%); }
 .toggle-option-matcha-button    { background: linear-gradient(155deg, #3B6438 45%, #7A5C30 55%); }
 .toggle-option-mist-button      { background: linear-gradient(155deg, #3D5A73 45%, #7A9EB5 55%); }
 .toggle-option-sakura-button    { background: linear-gradient(155deg, #B5294E 45%, #8B6F8E 55%); }
+.toggle-option-spartans-button  { background: linear-gradient(155deg, #18453B 45%, #4A9E7A 55%); }
 
 @media (max-width: 768px) {
     .theme-overlay {

@@ -55,12 +55,13 @@ const ThemeOverlay: React.FC = () => {
     >
       <ToggleButton className="toggle-option-braves-button"    value="braves"     aria-label="braves"     data-label="Braves"    />
       <ToggleButton className="toggle-option-dusk-button"      value="dusk"       aria-label="dusk"       data-label="Dusk"      />
-      <ToggleButton className="toggle-option-falcon-button"    value="falcon"     aria-label="falcon"     data-label="Falcon"    />
+      <ToggleButton className="toggle-option-falcons-button"   value="falcons"    aria-label="falcons"    data-label="Falcons"   />
       <ToggleButton className="toggle-option-katana-button"    value="katana"     aria-label="katana"     data-label="Katana"    />
       <ToggleButton className="toggle-option-knicks-button"    value="knicks"     aria-label="knicks"     data-label="Knicks"    />
       <ToggleButton className="toggle-option-matcha-button"    value="matcha"     aria-label="matcha"     data-label="Matcha"    />
       <ToggleButton className="toggle-option-mist-button"      value="mist"       aria-label="mist"       data-label="Mist"      />
       <ToggleButton className="toggle-option-sakura-button"    value="sakura"     aria-label="sakura"     data-label="Sakura"    />
+      <ToggleButton className="toggle-option-spartans-button"  value="spartans"   aria-label="spartans"   data-label="Spartans"  />
     </StyledToggleButtonGroup>
   );
 };

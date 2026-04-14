@@ -41,10 +41,16 @@ export const colors = {
       textColor: '#7A5C30',
       buttonColor: '#7A9E6B',
     },
-    falcon: {
+    falcons: {
       backgroundColor: '#0D1018',
       headerColor: '#C42828',
       textColor: '#C2CAD4',
       buttonColor: '#8FAEC4',
+    },
+    spartans: {
+      backgroundColor: '#F4F8F6',
+      headerColor: '#18453B',
+      textColor: '#1E2D27',
+      buttonColor: '#4A9E7A',
     },
 }

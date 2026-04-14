@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme }) => {
 		intervalRef.current = setInterval(() => {
 			indexRef.current = (indexRef.current + 1) % 3;
 			setColorIndex(indexRef.current);
-		}, 1800);
+		}, 500);
 	};
 
 	const handleBrandMouseLeave = () => {
