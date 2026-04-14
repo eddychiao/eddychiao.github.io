@@ -8,14 +8,13 @@
 }
 
 /* shared swatch base */
-.toggle-option-crimson-button,
+.toggle-option-braves-button,
 .toggle-option-dusk-button,
-.toggle-option-dynasty-button,
+.toggle-option-falcon-button,
 .toggle-option-katana-button,
-.toggle-option-lotus-button,
+.toggle-option-knicks-button,
 .toggle-option-matcha-button,
 .toggle-option-mist-button,
-.toggle-option-porcelain-button,
 .toggle-option-sakura-button {
     width: clamp(1rem, 1.375rem, 1.75rem) !important;
     height: clamp(1rem, 1.375rem, 1.75rem) !important;
@@ -24,7 +23,7 @@
     border-radius: 5px !important;
     border: 1.5px solid rgba(0,0,0,0.25) !important;
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease, opacity 0.15s ease !important;
     opacity: 0.7;
     overflow: visible !important;
 }
@@ -56,27 +55,26 @@
     transform: translateY(-50%) translateX(0);
 }
 
-.toggle-option-crimson-button:hover,
+.toggle-option-braves-button:hover,
 .toggle-option-dusk-button:hover,
-.toggle-option-dynasty-button:hover,
+.toggle-option-falcon-button:hover,
 .toggle-option-katana-button:hover,
-.toggle-option-lotus-button:hover,
+.toggle-option-knicks-button:hover,
 .toggle-option-matcha-button:hover,
 .toggle-option-mist-button:hover,
-.toggle-option-porcelain-button:hover,
 .toggle-option-sakura-button:hover {
-    opacity: 0.9;
-    transform: scale(1.1);
+    opacity: 1;
+    transform: scale(1.28) translateX(-4px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
-.toggle-option-crimson-button.Mui-selected,
+.toggle-option-braves-button.Mui-selected,
 .toggle-option-dusk-button.Mui-selected,
-.toggle-option-dynasty-button.Mui-selected,
+.toggle-option-falcon-button.Mui-selected,
 .toggle-option-katana-button.Mui-selected,
-.toggle-option-lotus-button.Mui-selected,
+.toggle-option-knicks-button.Mui-selected,
 .toggle-option-matcha-button.Mui-selected,
 .toggle-option-mist-button.Mui-selected,
-.toggle-option-porcelain-button.Mui-selected,
 .toggle-option-sakura-button.Mui-selected {
     opacity: 1;
     transform: scale(1.18);
@@ -85,12 +83,17 @@
 }
 
 /* gradients */
-.toggle-option-crimson-button   { background: linear-gradient(155deg, #180D0D 45%, #E84040 55%); }
+.toggle-option-braves-button    { background: linear-gradient(155deg, #1A52C8 45%, #B80320 55%); }
 .toggle-option-dusk-button      { background: linear-gradient(155deg, #1C1624 45%, #7C5CBF 55%); }
-.toggle-option-dynasty-button   { background: linear-gradient(155deg, #B8860B 45%, #8B1A1A 55%); }
+.toggle-option-falcon-button    { background: linear-gradient(155deg, #0D1018 45%, #C42828 55%); }
 .toggle-option-katana-button    { background: linear-gradient(155deg, #000000 45%, #A799B7 55%); }
-.toggle-option-lotus-button     { background: linear-gradient(155deg, #6B2D8B 45%, #5B8C5A 55%); }
+.toggle-option-knicks-button    { background: linear-gradient(155deg, #0F5FA8 45%, #EF7B2E 55%); }
 .toggle-option-matcha-button    { background: linear-gradient(155deg, #3B6438 45%, #7A5C30 55%); }
 .toggle-option-mist-button      { background: linear-gradient(155deg, #3D5A73 45%, #7A9EB5 55%); }
-.toggle-option-porcelain-button { background: linear-gradient(155deg, #1A52C8 45%, #B80320 55%); }
 .toggle-option-sakura-button    { background: linear-gradient(155deg, #B5294E 45%, #8B6F8E 55%); }
+
+@media (max-width: 768px) {
+    .theme-overlay {
+        z-index: 100;
+    }
+}

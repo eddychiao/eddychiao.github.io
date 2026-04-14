@@ -1,5 +1,5 @@
 export const colors = {
-    porcelain: {
+    braves: {
       backgroundColor: '#F8F7F5',
       headerColor: '#1A52C8',
       textColor: '#B80320',
@@ -17,17 +17,11 @@ export const colors = {
       textColor: '#5C3D2E',
       buttonColor: '#8B6F8E',
     },
-    lotus: {
-      backgroundColor: '#F2EEF8',
-      headerColor: '#6B2D8B',
-      textColor: '#C45C2E',
-      buttonColor: '#5B8C5A',
-    },
-    dynasty: {
-      backgroundColor: '#FBF8EC',
-      headerColor: '#B8860B',
-      textColor: '#8B1A1A',
-      buttonColor: '#4A7A3D',
+    knicks: {
+      backgroundColor: '#F6F9FD',
+      headerColor: '#0F5FA8',
+      textColor: '#1E2D3D',
+      buttonColor: '#EF7B2E',
     },
     dusk: {
       backgroundColor: '#1C1624',
@@ -47,10 +41,10 @@ export const colors = {
       textColor: '#7A5C30',
       buttonColor: '#7A9E6B',
     },
-    crimson: {
-      backgroundColor: '#180D0D',
-      headerColor: '#E84040',
-      textColor: '#D4B8A0',
-      buttonColor: '#C4820A',
+    falcon: {
+      backgroundColor: '#0D1018',
+      headerColor: '#C42828',
+      textColor: '#C2CAD4',
+      buttonColor: '#8FAEC4',
     },
 }

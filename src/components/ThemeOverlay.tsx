@@ -14,7 +14,7 @@ const themes = constants.colors;
 const ThemeOverlay: React.FC = () => {
   const { setTheme } = useTheme();
   const [view, setView] = React.useState<string>(() => {
-    return localStorage.getItem('themeName') || 'porcelain';
+    return localStorage.getItem('themeName') || 'braves';
   });
 
   const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
@@ -53,14 +53,13 @@ const ThemeOverlay: React.FC = () => {
       aria-label="theme selection"
       orientation="vertical"
     >
-      <ToggleButton className="toggle-option-crimson-button"   value="crimson"    aria-label="crimson"    data-label="Crimson"   />
+      <ToggleButton className="toggle-option-braves-button"    value="braves"     aria-label="braves"     data-label="Braves"    />
       <ToggleButton className="toggle-option-dusk-button"      value="dusk"       aria-label="dusk"       data-label="Dusk"      />
-      <ToggleButton className="toggle-option-dynasty-button"   value="dynasty"    aria-label="dynasty"    data-label="Dynasty"   />
+      <ToggleButton className="toggle-option-falcon-button"    value="falcon"     aria-label="falcon"     data-label="Falcon"    />
       <ToggleButton className="toggle-option-katana-button"    value="katana"     aria-label="katana"     data-label="Katana"    />
-      <ToggleButton className="toggle-option-lotus-button"     value="lotus"      aria-label="lotus"      data-label="Lotus"     />
+      <ToggleButton className="toggle-option-knicks-button"    value="knicks"     aria-label="knicks"     data-label="Knicks"    />
       <ToggleButton className="toggle-option-matcha-button"    value="matcha"     aria-label="matcha"     data-label="Matcha"    />
       <ToggleButton className="toggle-option-mist-button"      value="mist"       aria-label="mist"       data-label="Mist"      />
-      <ToggleButton className="toggle-option-porcelain-button" value="porcelain"  aria-label="porcelain"  data-label="Porcelain" />
       <ToggleButton className="toggle-option-sakura-button"    value="sakura"     aria-label="sakura"     data-label="Sakura"    />
     </StyledToggleButtonGroup>
   );
