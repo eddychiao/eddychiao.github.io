@@ -12,6 +12,13 @@ export interface TimelineEntry {
 
 export const entries: TimelineEntry[] = [
 	{
+		year: "2026-Current",
+		title: "?",
+		subtitle: "?",
+		type: "professional experience",
+		details: ["Coming soon 👀"],
+	},
+	{
 		year: "2021-2025",
 		title: "Microsoft",
 		subtitle: "Software Engineer I → II",
