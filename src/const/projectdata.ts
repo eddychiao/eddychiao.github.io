@@ -11,6 +11,14 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		id: "personal-bookshelf",
+		year: "2026",
+		title: "Bookshelf",
+		shortDescription: "What I've been reading",
+		fullDescription: "",
+		tags: ["React", "TypeScript"],
+	},
+	{
 		id: "portfolio",
 		year: "2025",
 		title: "Personal Website",
