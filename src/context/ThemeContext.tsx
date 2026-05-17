@@ -18,8 +18,12 @@ const ThemeContext = createContext<{
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme ? JSON.parse(savedTheme) : colors.braves;
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      return savedTheme ? JSON.parse(savedTheme) : colors.knicks;
+    } catch {
+      return colors.knicks;
+    }
   });
 
   useEffect(() => {
