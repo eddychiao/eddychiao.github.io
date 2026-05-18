@@ -11,6 +11,17 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
+		id: "jog-log",
+		year: "2026",
+		title: "Jog Log",
+		shortDescription: "A site to track my runs",
+		fullDescription:
+			"Since I don't want to pay for Strava, I built an app to track my runs as well as set goals for myself. This website's main function is to store my previous runs, and to set goals for myself to reach. There's also a way for me to log my past races/race distances as a record for me to keep improving.",
+		tags: ["React", "TypeScript"],
+		link: "https://github.com/eddychiao/JogLog",
+		image: "/images/projects/joglog.png",
+	},
+	{
 		id: "personal-bookshelf",
 		year: "2026",
 		title: "Bookshelf",

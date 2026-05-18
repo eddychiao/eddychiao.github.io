@@ -26,6 +26,13 @@ export const books: Book[] = [
 		yearRead: "2026",
 	},
 	{
+		id: "piranesi",
+		title: "Piranesi",
+		author: "Susanna Clarke",
+		isbn: "9781635577808",
+		yearRead: "2026",
+	},
+	{
 		id: "1984",
 		title: "1984",
 		author: "George Orwell",

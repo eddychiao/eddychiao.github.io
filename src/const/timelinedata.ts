@@ -13,8 +13,8 @@ export interface TimelineEntry {
 export const entries: TimelineEntry[] = [
 	{
 		year: "2026-Current",
-		title: "?",
-		subtitle: "?",
+		title: "Capital One",
+		subtitle: "Senior Software Engineer",
 		type: "professional experience",
 		details: ["Coming soon 👀"],
 	},
