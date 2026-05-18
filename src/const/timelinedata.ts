@@ -16,6 +16,7 @@ export const entries: TimelineEntry[] = [
 		title: "Capital One",
 		subtitle: "Senior Software Engineer",
 		type: "professional experience",
+		logo: "/images/capital_one_logo.svg",
 		details: ["Coming soon 👀"],
 	},
 	{
