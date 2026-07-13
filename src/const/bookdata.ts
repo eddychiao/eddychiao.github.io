@@ -12,6 +12,13 @@ export interface Book {
 export const books: Book[] = [
 	// ── 2026 ──────────────────────────────────────────────────────────────────
 	{
+		id: "mans-search-for-meaning",
+		title: "Man's Search for Meaning",
+		author: "Viktor E. Frankl",
+		isbn: "9780807014271",
+		yearRead: "2026",
+	},
+	{
 		id: "east-of-eden",
 		title: "East of Eden",
 		author: "John Steinbeck",

@@ -66,11 +66,11 @@
 
 .Bookshelf-shelf-year {
 	font-family: "Geist", sans-serif;
-	font-size: 0.85rem;
+	font-size: 1.02rem;
 	font-weight: 500;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
-	margin-bottom: 0.75rem;
+	margin-bottom: 0.9rem;
 	opacity: 0.85;
 }
 
@@ -84,12 +84,12 @@
 	display: flex;
 	align-items: flex-end;
 	flex-wrap: wrap;
-	gap: 0.75rem;
-	padding: 1.5rem 1rem 1rem;
+	gap: 0.9rem 1.1rem;
+	padding: 1.8rem 1.2rem 1.2rem;
 }
 
 .Bookshelf-shelf-plank {
-	height: 6px;
+	height: 7px;
 	border-radius: 1px;
 	position: relative;
 }
@@ -107,109 +107,67 @@
 
 /* ── Individual book ─────────────────────────────────────────────── */
 .Bookshelf-book {
-	position: relative;
+	display: flex;
+	flex-direction: column;
 	flex-shrink: 0;
+	width: 156px;
 	transition: transform 0.2s ease;
 }
 
-.Bookshelf-book--has-cover:hover {
-	transform: translateY(-10px);
+.Bookshelf-book:hover {
+	transform: translateY(-12px);
 }
 
 .Bookshelf-book-cover {
-	width: 130px;
-	height: 195px;
+	width: 156px;
+	height: 234px;
 	object-fit: cover;
 	border-radius: 2px 5px 5px 2px;
 	box-shadow: 3px 4px 14px rgba(0, 0, 0, 0.25);
 	display: block;
 }
 
-/* ── Hover tooltip overlay (cover books only) ────────────────────── */
-.Bookshelf-book-tooltip {
-	position: absolute;
-	inset: 0;
-	border-radius: 2px 5px 5px 2px;
-	background: linear-gradient(
-		to top,
-		rgba(0, 0, 0, 0.95) 0%,
-		rgba(0, 0, 0, 0.75) 45%,
-		rgba(0, 0, 0, 0.2) 100%
-	);
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	padding: 0.5rem 0.45rem;
-	opacity: 0;
-	transition: opacity 0.2s ease;
-	pointer-events: none;
-}
-
-.Bookshelf-book--has-cover:hover .Bookshelf-book-tooltip {
-	opacity: 1;
-}
-
-.Bookshelf-book-tooltip-title {
-	font-family: "Geist", sans-serif;
-	font-size: 0.86rem;
-	font-weight: 700;
-	color: #fff;
-	line-height: 1.3;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-}
-
-.Bookshelf-book-tooltip-author {
-	font-family: "Geist", sans-serif;
-	font-size: 0.75rem;
-	font-weight: 400;
-	color: rgba(255, 255, 255, 0.75);
-	margin-top: 0.25rem;
-	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
-}
-
 /* box-sizing: border-box ensures padding + border are included in the
-   declared 120×180 so the fallback stays the same size as a real cover */
+   declared size so the fallback stays the same size as a real cover */
 .Bookshelf-book-fallback {
 	box-sizing: border-box;
-	width: 130px;
-	height: 195px;
+	width: 156px;
+	height: 234px;
 	border-radius: 2px 5px 5px 2px;
 	border: 1px solid;
 	box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.12);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 0.6rem;
-	text-align: center;
-	gap: 0.3rem;
 }
 
-/* ── Fallback text ───────────────────────────────────────────────── */
-.Bookshelf-fallback-title {
+/* ── Label (title + author) below each book ──────────────────────── */
+.Bookshelf-book-label {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	width: 100%;
+	height: 3.4rem;
+	margin-top: 0.6rem;
+	overflow: hidden;
+}
+
+.Bookshelf-book-label-title {
 	font-family: "Geist", sans-serif;
-	font-size: 0.62rem;
+	font-size: 0.82rem;
 	font-weight: 600;
-	line-height: 1.3;
+	line-height: 1.25;
 	display: -webkit-box;
-	-webkit-line-clamp: 4;
+	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
 
-.Bookshelf-fallback-author {
+.Bookshelf-book-label-author {
 	font-family: "Geist", sans-serif;
-	font-size: 0.52rem;
+	font-size: 0.72rem;
 	font-weight: 400;
-	opacity: 0.6;
+	opacity: 0.65;
+	line-height: 1.25;
 	display: -webkit-box;
-	-webkit-line-clamp: 2;
+	-webkit-line-clamp: 1;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
@@ -220,14 +178,18 @@
 		padding: 3rem 8% 5rem;
 	}
 
+	.Bookshelf-book {
+		width: 132px;
+	}
+
 	.Bookshelf-book-cover {
-		width: 110px;
-		height: 165px;
+		width: 132px;
+		height: 198px;
 	}
 
 	.Bookshelf-book-fallback {
-		width: 110px;
-		height: 165px;
+		width: 132px;
+		height: 198px;
 	}
 }
 
@@ -247,22 +209,39 @@
 	}
 
 	.Bookshelf-shelf-books {
-		gap: 0.5rem;
-		padding: 1rem 0.5rem 0.75rem;
+		gap: 0.6rem 0.8rem;
+		padding: 1.2rem 0.6rem 0.9rem;
+	}
+
+	.Bookshelf-book {
+		width: 103px;
 	}
 
 	.Bookshelf-book-cover {
-		width: 86px;
-		height: 129px;
+		width: 103px;
+		height: 155px;
 	}
 
 	.Bookshelf-book-fallback {
-		width: 86px;
-		height: 129px;
+		width: 103px;
+		height: 155px;
 	}
 
-	.Bookshelf-book--has-cover:hover {
-		transform: translateY(-7px);
+	.Bookshelf-book-label {
+		height: 2.9rem;
+		margin-top: 0.45rem;
+	}
+
+	.Bookshelf-book-label-title {
+		font-size: 0.72rem;
+	}
+
+	.Bookshelf-book-label-author {
+		font-size: 0.62rem;
+	}
+
+	.Bookshelf-book:hover {
+		transform: translateY(-8px);
 	}
 }
 
@@ -271,13 +250,29 @@
 		padding: 2rem 4% 3rem;
 	}
 
+	.Bookshelf-book {
+		width: 84px;
+	}
+
 	.Bookshelf-book-cover {
-		width: 70px;
-		height: 105px;
+		width: 84px;
+		height: 126px;
 	}
 
 	.Bookshelf-book-fallback {
-		width: 70px;
-		height: 105px;
+		width: 84px;
+		height: 126px;
+	}
+
+	.Bookshelf-book-label {
+		height: 2.6rem;
+	}
+
+	.Bookshelf-book-label-title {
+		font-size: 0.64rem;
+	}
+
+	.Bookshelf-book-label-author {
+		font-size: 0.56rem;
 	}
 }

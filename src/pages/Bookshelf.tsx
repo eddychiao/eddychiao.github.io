@@ -26,11 +26,10 @@ const ShelfBook: React.FC<ShelfBookProps> = ({ book, theme }) => {
 	const hasCover = !!book.isbn && imgOk;
 
 	return (
-		<div
-			className={`Bookshelf-book${hasCover ? " Bookshelf-book--has-cover" : ""}`}>
-			{book.isbn && imgOk && (
+		<div className="Bookshelf-book">
+			{hasCover ? (
 				<img
-					src={olCoverUrl(book.isbn)}
+					src={olCoverUrl(book.isbn as string)}
 					alt={book.title}
 					className="Bookshelf-book-cover"
 					onLoad={(e) => {
@@ -39,25 +38,27 @@ const ShelfBook: React.FC<ShelfBookProps> = ({ book, theme }) => {
 					}}
 					onError={() => setImgOk(false)}
 				/>
-			)}
-			{!hasCover && (
+			) : (
 				<div
 					className="Bookshelf-book-fallback"
 					style={{
 						backgroundColor: theme.buttonColor + "20",
-						color: theme.textColor,
 						borderColor: theme.buttonColor + "40",
-					}}>
-					<span className="Bookshelf-fallback-title">{book.title}</span>
-					<span className="Bookshelf-fallback-author">{book.author}</span>
-				</div>
+					}}
+				/>
 			)}
-			{hasCover && (
-				<div className="Bookshelf-book-tooltip">
-					<span className="Bookshelf-book-tooltip-title">{book.title}</span>
-					<span className="Bookshelf-book-tooltip-author">{book.author}</span>
-				</div>
-			)}
+			<div className="Bookshelf-book-label">
+				<span
+					className="Bookshelf-book-label-title"
+					style={{ color: theme.textColor }}>
+					{book.title}
+				</span>
+				<span
+					className="Bookshelf-book-label-author"
+					style={{ color: theme.textColor }}>
+					{book.author}
+				</span>
+			</div>
 		</div>
 	);
 };
