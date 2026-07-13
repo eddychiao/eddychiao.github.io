@@ -12,6 +12,13 @@ export interface Book {
 export const books: Book[] = [
 	// ── 2026 ──────────────────────────────────────────────────────────────────
 	{
+		id: "everything-is-tuberculosis",
+		title: "Everything is Tuberculosis",
+		author: "John Green",
+		isbn: "9780525556572",
+		yearRead: "2026",
+	},
+	{
 		id: "mans-search-for-meaning",
 		title: "Man's Search for Meaning",
 		author: "Viktor E. Frankl",
