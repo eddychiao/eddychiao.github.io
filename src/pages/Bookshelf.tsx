@@ -103,10 +103,20 @@ const Bookshelf: React.FC<BookshelfProps> = ({ theme }) => {
 			<div className="Bookshelf-shelves">
 				{years.map((year) => (
 					<div key={year} className="Bookshelf-shelf">
-						<div
-							className="Bookshelf-shelf-year"
-							style={{ color: theme.buttonColor }}>
-							{year}
+						<div className="Bookshelf-shelf-year-row">
+							<div
+								className="Bookshelf-shelf-year"
+								style={{ color: theme.buttonColor }}>
+								{year}
+							</div>
+							<div
+								className="Bookshelf-shelf-count"
+								style={{
+									color: theme.buttonColor,
+									backgroundColor: theme.buttonColor + "1a",
+								}}>
+								{booksByYear[year].length}
+							</div>
 						</div>
 
 						<div className="Bookshelf-shelf-unit">
